@@ -1,8 +1,8 @@
-<div class="py-5 bg-gray-100">
+<div class="py-16 bg-gray-100">
     <div class="container">
         <div class="flex flex-wrap">
             
-            <div class="w-full text-center md:w-1/4 lg:w-1/5 md:px-8">
+            <div class="w-full text-center md:text-left md:w-1/4 lg:w-1/5 md:px-8">
                 <h3>Reviews</h3>
                 <a class="btn btn--tertiary" href="http://reviews.io">See all reviews</a>
             </div>
@@ -42,17 +42,13 @@
                 </ul>
                 <div class="absolute top-0 left-0 flex items-center h-full">
                     <button class="px-0 py-2 opacity-25 carousel-arrow carousel-arrow-left">
-                        <svg class="block text-2xl text-white icon xl:text-3xl">
-                            <use href="#icon-angle-left"></use>
-                        </svg>
+                        {{function('icon', 'angle-left', 'text-white')}}
                     </button>
                 </div>
-
+                
                 <div class="absolute top-0 right-0 flex items-center h-full">
                     <button class="px-0 py-2 carousel-arrow carousel-arrow-right">
-                        <svg class="block text-2xl text-white icon xl:text-3xl">
-                            <use href="#icon-angle-right"></use>
-                        </svg>
+                        {{function('icon', 'angle-right', 'text-white')}}
                     </button>
                 </div>
             </div>
