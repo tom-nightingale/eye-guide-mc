@@ -16,7 +16,8 @@ module.exports = {
       "4xl": "1900px",
     },
     fontFamily: {
-      sans: ["Source Sans Pro", "sans-serif"],
+      sans: ["Raleway", "sans-serif"],
+      serif: ['Source Serif Pro', 'serif'],
     },
     filter: {
       none: "none",
@@ -38,7 +39,7 @@ module.exports = {
           light: '#fb7474',
           DEFAULT: '#FA5353',
           dark: '#f93232',
-        }
+        },
       },
       spacing: {
         72: "18rem",

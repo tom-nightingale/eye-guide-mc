@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  @apply font-sans antialiased leading-relaxed text-black;
+  @apply font-sans antialiased leading-relaxed text-primary;
 }
 
 /* Uses IntersectionObserver to identify when the viewport has scrolled, and then show back to top */
@@ -23,7 +23,7 @@ body {
 
 .container {
   @apply w-full px-4 mx-auto;
-  max-width: calc(theme("screens.3xl") + theme("spacing.8"));
+  max-width: calc(theme("screens.4xl") + theme("spacing.8"));
 }
 
 a {

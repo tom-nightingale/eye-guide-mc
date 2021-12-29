@@ -1,48 +1,66 @@
-<footer class="p-4 text-center bg-primary md:p-8 lg:px-0 lg:text-left">
+<div class="py-8 text-center text-white md:py-10 bg-tertiary">
+	<div class="max-w-lg p-4 mx-auto">		
+		<p class="h1">Get in touch</p>
+		<p>We offer free consultations so get in touch with us today and we’ll be happy to help</p>
 
-	<div class="container flex-wrap lg:flex">
-
-		<div class="w-full mb-8 lg:w-3/12">
-			<a aria-label="Go to homepage" class="block lg:inline-block" href="{{site.site_url}}">
-				<img class="mx-auto max-w-40" src="{{options.site_logo.url}}" alt="{{site.title}} Logo"/>
-			</a>
+		<div class="my-8">
+			<a href="tel:{{options.default_phone_number}}" class="btn btn--outline-white">Call us on {{options.default_phone_number}}</a>
+			<span class="block p-2 md:inline-block">or</span>
+			<a href="{{site.url}}/contact/" class="btn btn--white">Contact us online</a>
 		</div>
+	</div>
+</div>
 
-		<div class="w-full mb-8 lg:w-3/12">
-			<h6>Explore</h6>
+
+<footer class="p-4 font-semibold leading-loose text-center text-white bg-primary md:p-10 md:py-16 lg:px-0 lg:text-left">
+
+	<div class="container flex-wrap pt-12 lg:flex lg:pt-0">
+
+		<div class="relative w-full pt-8 mb-8 lg:w-3/12 after:absolute after:top-0 after:left-1/2 lg:after:left-0 lg:after:translate-x-0 after:-translate-x-1/2 after:w-[30px] after:h-[2px] after:bg-white"> 
 			<ul>
 				{% for item in primaryMenu.items %}
 					<li class="{{item.class}}">
-						<a href="{{item.url}}">{{item.name}}</a>
+						<a href="{{item.url}}" class="hover:text-secondary">{{item.name}}</a>
 					</li>
 				{% endfor %}
 			</ul>
 		</div>
 
-		<div class="w-full lg:w-1/2">
-			<p>Address:
-				{{ function('address_stacked') }}</p>
-			<p>Email:
-				<a href="mailto:{{options.site_email}}">{{options.site_email}}</a>
-			</p>
-			<p>{{site.title}}
-				is a registered company in England.</p>
+		<div class="relative w-full pt-8 mb-8 lg:w-3/12 after:absolute after:top-0 after:left-1/2 lg:after:left-0 lg:after:translate-x-0 after:-translate-x-1/2 after:w-[30px] after:h-[2px] after:bg-white">
+			{% include "_components/social-links.twig" with {
+				linkClasses: 'block hover:text-secondary',
+			} %}
+		</div>
 
-			{% if options.reg_number %}
-				<p>Registered Number:
-					{{options.reg_number}}</p>
-			{% endif %}
+		<div class="relative w-full pt-8 mb-8 lg:w-3/12 after:absolute after:top-0 after:left-1/2 lg:after:left-0 lg:after:translate-x-0 after:-translate-x-1/2 after:w-[30px] after:h-[2px] after:bg-white">
+			<p>{{ function('address_stacked') }}</p>
 
-			{% if options.vat_number %}
-				<p>VAT Number:
-					{{options.vat_number}}</p>
-			{% endif %}
+			<p class="my-8">Monday - Friday <span class="block">9am - 5pm</span></p>
 
-			<p>&copy;
-				{{site.title}}
-				{{ 'now' | date('Y') }}. All Rights Reserved</p>
+			{% include "_components/phone-number.twig" %}
+		</div>
 
-			{# <a class="block mx-auto max-w-32 adtrak" href="https://www.adtrak.co.uk/website-referral/" target="_blank" rel="noreferrer noopener">{{function('get_adtrak_logo_new')}}</a> #}
+	</div>
+
+	<div class="container lg:flex lg:flex-wrap">
+
+		<div class="w-full mb-8 lg:w-3/12">
+			<a aria-label="Go to homepage" class="block lg:inline-block" href="{{site.site_url}}">
+				<img class="mx-auto" src="{{theme.link}}/_resources/images/logo-light.png" alt="{{site.title}} Logo" />
+			</a>
+		</div>
+
+		<div class="flex flex-col items-center w-full mb-8 lg:flex-row lg:w-9/12 lg:justify-end lg:text-sm">
+			
+			<a class="hover:text-secondary" href="{{site.url}}/privacy-policy/">Privacy Policy</a>
+			
+			<span class="hidden lg:inline-block bg-secondary rounded-full w-1 h-1 mx-4 text-indent-[1000px]"></span>
+			
+			<a class="hover:text-secondary" href="{{site.url}}/terms-conditions/">Terms &amp; Conditions</a>
+			
+			<span class="hidden lg:inline-block bg-secondary rounded-full w-1 h-1 mx-4 text-indent-[1000px]"></span>
+			
+			<p>&copy; {{site.title}} {{ 'now' | date('Y') }}. All Rights Reserved. Company Registered Number: <span class="text-secondary">{{options.reg_number}}</span></p>
 		</div>
 
 	</div>

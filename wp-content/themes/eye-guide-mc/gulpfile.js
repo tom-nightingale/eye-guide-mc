@@ -171,7 +171,7 @@ gulp.task("watch", () => {
  **************************/
 gulp.task("serve", () => {
   browserSync.init({
-    proxy: `eye-guide-mc.vm`,
+    proxy: `eye-guide.vm`,
     files: ["**/*.php", "**/*.js", "**/*.twig", "**/*.css"],
     ghostMode: false,
     open: false,

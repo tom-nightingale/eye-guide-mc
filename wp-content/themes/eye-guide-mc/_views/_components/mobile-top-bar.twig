@@ -1,14 +1,11 @@
 <div class="fixed z-50 flex flex-wrap w-full bg-primary lg:hidden">
 
-<div data-ld-toggle="ld-mobile-top" class="w-1/2 p-2 text-center bg-secondary">
-  0800 000 0000
-</div>
+{% include "_components/phone-number.twig" with {
+  icon: false,
+  classes: 'font-semibold text-white w-1/2 p-2 inline-block bg-secondary text-center'
+} %}
 
-<div id="ld-mobile-top" class="absolute left-0 z-10 hidden w-full p-4 bg-secondary top-full">
-  0800 000 0000
-</div>
-
-<button title="Toggle Mobile Menu" class="flex items-center justify-center w-1/2 p-2 text-center bg-primary" data-mobile-menu-toggle>
+<button title="Toggle Mobile Menu" class="flex items-center justify-center w-1/2 p-2 font-semibold text-center text-white bg-primary" data-mobile-menu-toggle>
   {{ function('icon', 'bars') }}
   <span class="ml-2">Menu</span>
 </button>

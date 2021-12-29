@@ -3,29 +3,53 @@ Buttons
 --------------------------------------------------- */
 
 .btn {
-  @apply px-4 py-2 transition duration-300 rounded;
+  @apply inline-block px-5 py-3 font-semibold transition duration-300;
 }
 
 .btn--primary {
   @apply text-white bg-primary;
 
   &:hover {
-    @apply bg-primary-dark;
+    @apply bg-primary-dark; 
   }
 }
 
-.btn-outline--white {
+.btn--secondary {
+  @apply text-white bg-secondary;
+
+  &:hover {
+    @apply bg-secondary-dark;
+  }
+}
+
+.btn-outline--secondary {
+  @apply text-white border-2 border-secondary;
+
+  &:hover {
+    @apply text-white bg-secondary;
+  }
+}
+
+.btn--tertiary {
+  @apply text-white bg-tertiary;
+
+  &:hover {
+    @apply bg-tertiary-dark;
+  }
+}
+
+.btn--white {
+  @apply bg-white border-2 border-white text-tertiary;
+
+  &:hover {
+    @apply bg-opacity-90
+  }
+}
+
+.btn--outline-white {
   @apply text-white border-2 border-white;
 
   &:hover {
-    @apply text-black bg-white;
-  }
-}
-
-.btn-outline--black {
-  @apply text-black border-2 border-black;
-
-  &:hover {
-    @apply text-white bg-black;
+    @apply bg-white text-tertiary;
   }
 }
