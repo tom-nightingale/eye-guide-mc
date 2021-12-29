@@ -1,65 +1,23 @@
-<div class="w-full bg-center bg-cover hero">
-	{% set hero_small = post.thumbnail.src|resize('800') %}
-	{% set hero_medium = post.thumbnail.src|resize('1200') %}
-	{% set hero_large = post.thumbnail.src|resize('2000') %}
-	<style>
-		.hero {
-			background-image: url('{{hero_small}}');
-		}
-		@media(min-width: 800px) {
-			.hero {
-				background-image: url('{{hero_medium}}');
-			}
-		}
-		@media(min-width: 1200px) {
-			.hero {
-				background-image: url('{{hero_large}}');
-			}
-		}
-	</style>
+<div class="relative bg-primary lg:mt-[-5px] xl:mt-[-15px] text-white flex flex-wrap text-center">
 
-	{% include "_components/picture.twig" with {
-    source: post.thumbnail.src,
-    lazyload: false,
-    breakpoints: {
-      "1530px" : {
-        w: 1800,
-        h: 500,
-        crop: 'center'
-      },
-      "1280px" : {
-        w: 1530,
-        h: 500,
-        crop: 'center'
-      },
-      "1024px" : {
-        w: 1280,
-        h: 500,
-        crop: 'center'
-      },
-      "768px" : {
-        w: 1024,
-        h: 500,
-        crop: 'center'
-      },
-      "640px" : {
-        w: 768,
-        h: 400,
-        crop: 'center'
-      },
-      "1px" : {
-        w: 640,
-        h: 640,
-        crop: 'center'
-      },
-    },
-    img: {
-      classes: '',
-      w: 640,
-      h: 640,
-      crop: 'center',
-    }
-  }
-  %}
+  <div class="hidden lg:block lg:w-1/2 2xl:w-1/3 bg-primary-light">
+    <img class="object-cover object-center w-full h-full" src="https://placedog.net/500" alt="">
+  </div>
+
+  <div
+    class="w-full lg:w-1/2 p-4 py-16 2xl:w-1/3 2xl:px-12 3xl:p-24 order-[-1] 2xl:order-1 flex flex-col justify-center">
+
+    <p class="h1">Helping people with Parkinson's reclaim independence</p>
+
+    <p class="my-8 font-semibold">The Eye Guide MC is a new device invented by a person with Parkinson's, for people
+      with Parkinson's</p>
+
+    <a href="{{site.url}}/contact" class="mx-auto btn btn--secondary">Contact us today</a>
+
+  </div>
+
+  <div class="hidden w-1/3 2xl:order-2 2xl:block bg-primary-light">
+    <img class="object-cover object-center w-full h-full" src="https://placedog.net/500" alt="">
+  </div>
 
 </div>

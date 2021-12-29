@@ -1,32 +1,8 @@
 {% extends '_layout/base.twig' %}
 
-{% block hero %}
-	<div class="relative bg-primary lg:mt-[-5px] xl:mt-[-15px] text-white flex flex-wrap text-center">
-
-		<div class="hidden lg:block lg:w-1/2 2xl:w-1/3 bg-primary-light">
-			<img class="object-cover object-center w-full h-full" src="https://placedog.net/500" alt="">
-		</div>
-
-		<div class="w-full lg:w-1/2 p-4 py-16 2xl:w-1/3 2xl:p-12 order-[-1] 2xl:order-1 flex flex-col justify-center">
-
-			<p class="h1">Helping people with Parkinson's reclaim independence</p>
-			
-			<p class="my-8 font-semibold">The Eye Guide MC is a new device invented by a person with Parkinson's, for people with Parkinson's</p>
-			
-			<a href="{{site.url}}/contact" class="mx-auto btn btn--secondary">Contact us today</a>
-
-		</div>
-
-		<div class="hidden w-1/3 2xl:order-2 2xl:block bg-primary-light">
-			<img class="object-cover object-center w-full h-full" src="https://placedog.net/500" alt="">
-		</div>		
-		
-	</div>
-{% endblock %}
-
 {% block content %}
 
-	<div class="container py-24 text-center ">
+	<div class="container py-24 text-center max-w-screen-2xl">
 
 		<div class="relative after:absolute after:top-1/2 after:left-0 after:w-full after:h-[1px] after:bg-gray-200 mb-8">
 			<h2 class="relative z-10 inline-block px-6 mx-auto mb-0 bg-white">Introducing the Eye Guide MC</h2>

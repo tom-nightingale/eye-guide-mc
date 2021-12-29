@@ -16,33 +16,37 @@
 	
 	</div>
 
-	<div class="container justify-end lg:flex lg:relative bg-gray-100/50">
+	<div class="bg-gray-100/50">
 
-		<a aria-label="Go to homepage" class="lg:absolute z-10 top-[-25px] xl:top-[-23px] 2xl:top-[-43px] 3xl:top-[-40px] left-4 block py-2 lg:inline-block lg:w-[270px] xl:w-[350px] 2xl:w-[477px]" href="{{site.site_url}}">
-			<img class="mx-auto" src="{{options.site_logo.url}}" alt="{{site.title}} Logo"/>
-		</a>
+		<div class="container justify-end lg:flex lg:relative ">
 
-		<nav id="menu-primary" class="hidden font-semibold transition duration-200 lg:block menu" aria-labelledby="primary-navigation">
-			<span class="sr-only" id="primary-navigation">Primary Navigation</span>
-			<ul class="flex flex-wrap justify-center w-full menu-primary">
-				{% for item in primaryMenu.items %}
-				<li class="{{item.class}}">
-					<a href="{{item.link}}"
-						class="border-l-2 border-white relative block p-2 xl:p-4 3xl:px-6 py-6 xl:py-10 xl:pt-8 2xl:pt-10 2xl:py-12 text-sm xl:text-base 3xl:text-lg hover:text-black focus:text-black border-t-2 {{ item.current ? 'border-t-tertiary' }}">{{item.name}}</a>
-					{% if item.children %}
-					<ul class="sub-menu">
-						{% for child in item.children %}
-						<li class="{{child.class}}">
-							<a href="{{child.link}}"
-								class="block p-4 text-gray-500 hover:text-black focus:text-black">{{child.name}}</a>
-						</li>
-						{% endfor %}
-					</ul>
-					{% endif %}
-				</li>
-				{% endfor %}
-			</ul>
-		</nav>
+			<a aria-label="Go to homepage" class="lg:absolute z-10 top-[-25px] xl:top-[-23px] 2xl:top-[-43px] 3xl:top-[-40px] left-4 block py-2 lg:inline-block lg:w-[270px] xl:w-[350px] 2xl:w-[477px]" href="{{site.site_url}}">
+				<img class="mx-auto" src="{{options.site_logo.url}}" alt="{{site.title}} Logo"/>
+			</a>
+
+			<nav id="menu-primary" class="hidden font-semibold transition duration-200 lg:block menu" aria-labelledby="primary-navigation">
+				<span class="sr-only" id="primary-navigation">Primary Navigation</span>
+				<ul class="flex flex-wrap justify-center w-full menu-primary">
+					{% for item in primaryMenu.items %}
+					<li class="{{item.class}}">
+						<a href="{{item.link}}"
+							class="border-l-2 border-white relative block p-2 xl:p-4 3xl:px-6 py-6 xl:py-10 xl:pt-8 2xl:pt-10 2xl:py-12 text-sm xl:text-base 3xl:text-lg hover:text-black focus:text-black border-t-2 {{ item.current ? 'border-t-tertiary' }}">{{item.name}}</a>
+						{% if item.children %}
+						<ul class="sub-menu">
+							{% for child in item.children %}
+							<li class="{{child.class}}">
+								<a href="{{child.link}}"
+									class="block p-4 text-gray-500 hover:text-black focus:text-black">{{child.name}}</a>
+							</li>
+							{% endfor %}
+						</ul>
+						{% endif %}
+					</li>
+					{% endfor %}
+				</ul>
+			</nav>
+
+		</div>
 
 	</div>
 
