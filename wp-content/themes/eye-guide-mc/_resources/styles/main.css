@@ -12,3 +12,11 @@
 @import "tailwindcss/utilities";
 
 /* Custom CSS Here */
+
+.carousel-container {
+scrollbar-width: none; /* Firefox */
+-ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.carousel-container::-webkit-scrollbar { /* WebKit */
+display: none;
+}

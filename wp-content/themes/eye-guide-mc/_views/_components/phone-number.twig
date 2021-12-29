@@ -2,5 +2,9 @@
     {% if icon %}
         {{function('icon', 'phone', 'transform rotate-90 mr-1 text-secondary')}}
     {% endif %}
+
+    {% if calltag %}
+        Call us on
+    {% endif %}
     {{options.default_phone_number}}
 </a>

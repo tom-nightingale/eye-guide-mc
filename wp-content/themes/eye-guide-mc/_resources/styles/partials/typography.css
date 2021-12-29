@@ -33,6 +33,10 @@ h3, .h3 {
   @apply text-[20px] lg:text-[32px];
 }
 
+h4, .h4 {
+  @apply text-[20px] lg:text-[28px];
+}
+
 
 /* Copy */
 
