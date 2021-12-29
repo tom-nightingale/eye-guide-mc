@@ -171,7 +171,7 @@ gulp.task("watch", () => {
  **************************/
 gulp.task("serve", () => {
   browserSync.init({
-    proxy: `adtrak-boilerplate.vm`,
+    proxy: `eye-guide-mc.vm`,
     files: ["**/*.php", "**/*.js", "**/*.twig", "**/*.css"],
     ghostMode: false,
     open: false,

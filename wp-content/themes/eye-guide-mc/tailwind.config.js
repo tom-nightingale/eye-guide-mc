@@ -25,15 +25,20 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          light: "#eee",
-          DEFAULT: "#ccc",
-          dark: "#666",
+          light: "#03364c",
+          DEFAULT: "#021F2C",
+          dark: "#01080c",
         },
         secondary: {
-          light: "#f83",
-          DEFAULT: "#d0dfe5",
-          dark: "#c0ced3",
+          light: "#c8ae78",
+          DEFAULT: "#BEA060",
+          dark: "#b39149",
         },
+        tertiary: {
+          light: '#fb7474',
+          DEFAULT: '#FA5353',
+          dark: '#f93232',
+        }
       },
       spacing: {
         72: "18rem",
