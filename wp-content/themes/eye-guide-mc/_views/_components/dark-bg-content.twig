@@ -1,0 +1,92 @@
+<div class="p-4 md:mt-12 bg-primary">
+
+    {% if options.why_choose_us %}
+
+        <div class="container flex flex-wrap p-0 md:transform md:-translate-y-1/2 max-w-screen-3xl">
+
+            {% for item in options.why_choose_us %}
+
+            <div class="w-full p-2 sm:w-1/2 md:w-1/4 lg:p-4">
+                <div class="w-full h-full p-4 bg-white drop-shadow-2xl lg:p-8">
+                    <p class="mb-0 h4">{{item.reason_heading}}</p>
+                    <p>{{item.reason}}</p>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% endif %}
+
+
+    <div class="container flex-wrap items-start mt-8 text-white max-w-screen-3xl lg:flex">
+
+        <div class="lg:w-3/5 xl:w-3/4">
+
+            <h2
+                class="inline-block relative after:absolute after:bg-tertiary after:w-full after:h-[2px] after:bottom-0 after:left-0 mb-8">
+                {{heading}}</h2>
+
+            <div class="mb-8 lg:w-4/5 dark-content">
+
+                {{content}}
+
+            </div>
+
+            <div class="mx-auto text-center lg:text-left lg:m-0">
+
+                {% include "_components/phone-number.twig" with {
+                    classes: 'btn btn--outline-secondary',
+                    calltag: true,
+                } %}
+
+                <span class="block p-2 font-semibold md:inline-block">or</span>
+
+                <a class="btn btn--secondary" href="{{site.url}}/contact">Book a free consultation</a>
+
+            </div>
+
+        </div>
+
+        {% if images %}
+
+        <div class="flex flex-wrap mt-8 -mx-4 lg:mt-0 lg:mx-0 lg:w-2/5 xl:w-1/4">
+
+            {% for image in images %}
+
+                <div class="w-1/2 p-4 lg:w-full lg:mb-8">
+                    <img class="object-cover object-center w-full" src="{{image.url}}" alt="">
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+    {% if addMissionStatement %}
+        <div class="flex flex-wrap mx-auto mb-16 lg:mt-16 max-w-screen-3xl">
+
+            {% for item in options.mission_statement_points %}
+
+                <div class="w-full p-4 sm:w-1/2">
+
+                    <div class="h-full p-8 text-white bg-primary-light copy">
+
+                        <h3
+                            class="relative mb-6 inline-block after:absolute after:left-0 after:bottom-[-5px] after:h-[1px] after:w-full after:bg-primary-lightest">
+                            {{item.heading}}</h3>
+
+                        {{item.content}}
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    {% endif %}
+
+</div>

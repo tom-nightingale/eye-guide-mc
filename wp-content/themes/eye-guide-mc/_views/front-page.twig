@@ -1,150 +1,57 @@
 {% extends '_layout/base.twig' %}
 
+{% block hero %}
+	{% include "_components/hero.twig" with {
+		imageLeft: post.meta('hero_image_left'),
+		imageRight: post.meta('hero_image_right'),
+		heading: post.hero_heading,
+		subheading: post.hero_subheading,
+		heroButton: post.hero_button,
+		heroButtonText: post.hero_button_text,
+		heroButtonDestination: post.hero_button_destination,
+	} %}
+{% endblock %}
+
 {% block content %}
 
-	<div class="container py-24 text-center max-w-screen-2xl">
+	{% for block in post.meta('page_builder') %}
 
-		<div class="relative after:absolute after:top-1/2 after:left-0 after:w-full after:h-[1px] after:bg-gray-200 mb-8">
-			<h2 class="relative z-10 inline-block px-6 mx-auto mb-0 bg-white">Introducing the Eye Guide MC</h2>
-		</div>
+	{% if block.acf_fc_layout == "centered_text" %}
 
-		<div class="max-w-xl mx-auto copy">
+		{% include "_components/centered-content.twig" with {
+			heading: block.heading,
+			content: block.content,
+			hasButton: block.has_button,
+			buttonText: block.button_text,
+			buttonDestination: block.button_destination,
+		} %}
 
-			<p class="font-semibold">The Eye Guide MC is a new device invented by a person with Parkinson's, for people with Parkinson's. It is a simple,
-			wearable aid that can drastically improve the quality of life of a person with Parkinson's Disease.</p>
-			
-			<p>The device sits discreetly over the wearer's ear, lining up to their visual field. It provides a visual sensory stimulus
-			which can help to improve a person with Parkinson's balance, walking and tremor.</p>
+	{% endif %}
 
-		</div>
+	{% if block.acf_fc_layout == "dark_background_content" %}
 
-		<a href="{{site.url}}/about-eyeguide-mc" class="mt-8 btn btn--tertiary">About the Eye Guide MC</a>
-		
-	</div>
+		{% include "_components/dark-bg-content.twig" with {
+			heading: block.heading,
+			content: block.content,
+			images: block.imagery,
+			addDisclaimer: block.add_disclaimer,
+			addMissionStatement: block.add_mission_statement_points,
+		} %}
 
+	{% endif %}
 
-	<div class="p-4 md:mt-12 bg-primary">
-
-		<div class="container flex flex-wrap p-0 md:transform md:-translate-y-1/2 max-w-screen-3xl">
-
-			<div class="w-full p-2 sm:w-1/2 md:w-1/4 lg:p-4">
-				<div class="w-full p-4 bg-white drop-shadow-2xl lg:p-8">
-					<p class="mb-0 h4">No surgery</p>
-					<p>No surgery required - just a simple fitting by our experts</p>
-				</div>
-			</div>
-
-			<div class="w-full p-2 sm:w-1/2 md:w-1/4 lg:p-4">
-				<div class="w-full p-4 bg-white drop-shadow-2xl lg:p-8">
-					<p class="mb-0 h4">No surgery</p>
-					<p>No surgery required - just a simple fitting by our experts</p>
-				</div>
-			</div>
-
-			<div class="w-full p-2 sm:w-1/2 md:w-1/4 lg:p-4">
-				<div class="w-full p-4 bg-white drop-shadow-2xl lg:p-8">
-					<p class="mb-0 h4">No surgery</p>
-					<p>No surgery required - just a simple fitting by our experts</p>
-				</div>
-			</div>
-
-			<div class="w-full p-2 sm:w-1/2 md:w-1/4 lg:p-4">
-				<div class="w-full p-4 bg-white drop-shadow-2xl lg:p-8">
-					<p class="mb-0 h4">No surgery</p>
-					<p>No surgery required - just a simple fitting by our experts</p>
-				</div>
-			</div>
-
-		</div>
+	{% endfor %}
 
 
-		<div class="container flex-wrap items-start mt-8 text-white max-w-screen-3xl lg:flex">
-
-			<div class="lg:w-3/5 xl:w-3/4">
-
-				<h2 class="inline-block relative after:absolute after:bg-tertiary after:w-full after:h-[2px] after:bottom-0 after:left-0 mb-8">How it works</h2>
-
-				<ul class="mb-8 lg:w-4/5">
-
-					<li class="relative py-4 pl-6 before:rounded-full before:absolute before:top-6 before:left-0 before:bg-tertiary before:w-2 before:h-2">The Eye Guide MC is a simple device that can instantly improve the debilitating symptoms of Parkinson's Disease (speech,
-					tremor, movement, coordination).</li>
-					
-					<li class="relative py-4 pl-6 before:rounded-full before:absolute before:top-6 before:left-0 before:bg-tertiary before:w-2 before:h-2">The Eye Guide MC is worn over the ear, pointing out along the eye line and sites along the meridian line.</li>
-					
-					<li class="relative py-4 pl-6 before:rounded-full before:absolute before:top-6 before:left-0 before:bg-tertiary before:w-2 before:h-2">The Guide sits in the peripheral vision, so that the eye only sees the very tip of it.</li>
-
-					<li class="relative py-4 pl-6 before:rounded-full before:absolute before:top-6 before:left-0 before:bg-tertiary before:w-2 before:h-2">This enables the brain to work with the eye, giving new signals to the Basal Ganglia, the part of the brain that
-					controls movement.</li>
-				
-				</ul>
-
-				<div class="mx-auto text-center lg:text-left lg:m-0">
-
-					{% include "_components/phone-number.twig" with {
-						classes: 'btn btn--outline-secondary',
-						calltag: true,
-					} %}
-					
-					<span class="block p-2 font-semibold md:inline-block">or</span>
-
-					<a class="btn btn--secondary" href="{{site.url}}/contact">Book a free consultation</a>
-
-				</div>
-
-			</div>
-
-			<div class="flex flex-wrap mt-8 -mx-4 lg:mt-0 lg:mx-0 lg:w-2/5 xl:w-1/4">
-
-				<div class="w-1/2 p-4 lg:w-full lg:mb-8">
-					<img class="object-cover object-center w-full" src="https://placedog.net/500" alt="">
-				</div>
-
-				<div class="w-1/2 p-4 lg:w-full">
-					<img class="object-cover object-center w-full" src="https://placedog.net/500" alt="">
-				</div>
-			</div>
-
-		</div>
-
-		<div class="flex flex-wrap mx-auto mb-16 lg:mt-16 max-w-screen-3xl text-tertiary-light">
-
-			<div class="w-full p-4 sm:w-1/2">
-				<div class="h-full p-8 text-white bg-primary-light copy">
-					
-					<h3 class="relative mb-6 inline-block after:absolute after:left-0 after:bottom-[-5px] after:h-[1px] after:w-full after:bg-primary-lightest">Driven to help people with Parkinson’s</h3>
-
-					<p class="font-semibold">Eye Guide MC was created by a person with Parkinson’s, for people with Parkinson’s. Every Parkinson’s person is welcome
-					to talk to us about a fitting.</p>
-
-					<p>The device was born out of a very personal Parkinson’s journey. Sandra, the inventor of Eye Guide MC, is in a unique
-					position to understand the needs of people with Parkinson’s and her mission is to improve the lives of those with the
-					condition. She persevered to create a device that will change lives for the better.</p>
-				</div>
-			</div>
-
-			<div class="w-full p-4 sm:w-1/2">
-				<div class="h-full p-8 text-white bg-primary-light copy">
-					
-					<h3 class="relative mb-6 inline-block after:absolute after:left-0 after:bottom-[-5px] after:h-[1px] after:w-full after:bg-primary-lightest">Patients first</h3>
-
-					<p class="font-semibold">Here at Eye Guide MC, patient care is our top priority. We're here to guide you through the full process of living with
-					your new Eye Guide MC, from an initial consultation, to the fitting, to follow up advice. All of our highly trained team
-					of technicians come from caring backgrounds and are trained by a Parkinson's Nurse Specialist.</p>
-
-					<p>Our friendly staff will greet you at the door of our clinic and will be with you all the way to reclaiming your
-					independence.</p>
-				</div>
-			</div>
-		
-		</div>
-		
-	</div>
+	
 
 	{% include "_components/video.twig" %}
 
 	{% include "_components/acknowledgments.twig" %}
 
-	{% include "_components/news-feed.twig" %}
+	{% include "_components/news-feed.twig" with {
+		posts: newsPosts
+	} only %}
 
 	{% include "_components/reviews.twig" %}
 

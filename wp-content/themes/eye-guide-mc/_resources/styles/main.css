@@ -14,9 +14,15 @@
 /* Custom CSS Here */
 
 .carousel-container {
-scrollbar-width: none; /* Firefox */
--ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 .carousel-container::-webkit-scrollbar { /* WebKit */
-display: none;
+    display: none;
+}
+
+.dark-content {
+    li {
+        @apply relative py-4 pl-6 before:rounded-full before:absolute before:top-6 before:left-0 before:bg-tertiary before:w-2 before:h-2;
+    }
 }

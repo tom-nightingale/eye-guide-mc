@@ -10,45 +10,33 @@
             <div class="relative flex justify-center w-full px-4 ml-auto md:w-3/4 lg:w-4/5 lg:px-6">
 
                 <ul class="flex w-full overflow-x-auto scrolling-touch md:-mx-5 2xl:-mx-8 carousel-container">
-                    <li class="flex-none w-full px-5 sm:w-1/2 lg:w-1/2 carousel-item">
-                        <div class="p-5 text-primary ">
-                            <div class="mb-3">
-                                <p class="font-serif trim text-primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                    veniam, quis nostrud exercitation...</p>
-                            </div>
+                    
+                    {% for item in reviews %}
+                        <li class="flex-none w-full px-5 sm:w-1/2 lg:w-1/2 carousel-item">
+                            <div class="p-5 text-primary ">
+                                <div class="mb-3">
+                                    <div class="font-serif text-primary">
+                                        {{item.content}}
+                                    </div>
+                                </div>
 
-                            <p class="mt-3 font-sans text-sm font-semibold leading-snug text-primary">
-                                <span>Dan Farrow -</span>
-                                <span>5 days ago</span>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="flex-none w-full px-5 sm:w-1/2 lg:w-1/2 carousel-item">
-                        <div class="p-5 text-primary ">
-                            <div class="mb-3">
-                                <p class="font-serif trim text-primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                    veniam, quis nostrud exercitation...</p>
+                                <p class="mt-3 font-sans text-sm font-semibold leading-snug text-primary">
+                                    <span>{{item.title}}</span>
+                                </p>
                             </div>
-
-                            <p class="mt-3 font-sans text-sm font-semibold leading-snug text-primary">
-                                <span>Dan Farrow -</span>
-                                <span>5 days ago</span>
-                            </p>
-                        </div>
-                    </li>
+                        </li>
+                    {% endfor %}
                     
                 </ul>
                 <div class="absolute top-0 left-0 flex items-center h-full">
                     <button class="px-0 py-2 opacity-25 carousel-arrow carousel-arrow-left">
-                        {{function('icon', 'angle-left', 'text-white')}}
+                        {{function('icon', 'angle-left', 'text-primary')}}
                     </button>
                 </div>
                 
                 <div class="absolute top-0 right-0 flex items-center h-full">
                     <button class="px-0 py-2 carousel-arrow carousel-arrow-right">
-                        {{function('icon', 'angle-right', 'text-white')}}
+                        {{function('icon', 'angle-right', 'text-primary')}}
                     </button>
                 </div>
             </div>
