@@ -26,3 +26,7 @@
         @apply relative py-4 pl-6 before:rounded-full before:absolute before:top-6 before:left-0 before:bg-tertiary before:w-2 before:h-2;
     }
 }
+
+.hero + .dark-bg-content {
+    @apply mt-10;
+}

@@ -1,21 +1,17 @@
 <div class="container py-24 text-center max-w-screen-2xl">
 
     <div class="relative after:absolute after:top-1/2 after:left-0 after:w-full after:h-[1px] after:bg-gray-200 mb-8">
-        <h2 class="relative z-10 inline-block px-6 mx-auto mb-0 bg-white">Introducing the Eye Guide MC</h2>
+        <h1 class="relative z-10 inline-block px-6 mx-auto mb-0 bg-white">{{heading}}</h1>
     </div>
 
-    <div class="max-w-xl mx-auto copy">
+    <div class="max-w-4xl mx-auto copy">
 
-        <p class="font-semibold">The Eye Guide MC is a new device invented by a person with Parkinson's, for people with
-            Parkinson's. It is a simple,
-            wearable aid that can drastically improve the quality of life of a person with Parkinson's Disease.</p>
-
-        <p>The device sits discreetly over the wearer's ear, lining up to their visual field. It provides a visual
-            sensory stimulus
-            which can help to improve a person with Parkinson's balance, walking and tremor.</p>
+        {{content}}
 
     </div>
 
-    <a href="{{site.url}}/about-eyeguide-mc" class="mt-8 btn btn--tertiary">About the Eye Guide MC</a>
+    {% if hasButton %}
+        <a href="{{buttonDestination.url}}" class="mt-8 btn btn--tertiary">{{buttonText}}</a>
+    {% endif %}
 
 </div>

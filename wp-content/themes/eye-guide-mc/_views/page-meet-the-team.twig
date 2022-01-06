@@ -28,28 +28,24 @@
 
 		{% endif %}
 
-		{% if block.acf_fc_layout == "dark_background_content" %}
+	{% endfor %}	`
 
-			{% include "_components/dark-bg-content.twig" with {
-				heading: block.heading,
-				content: block.content,
-				images: block.imagery,
-				addDisclaimer: block.add_disclaimer,
-				addMissionStatement: block.add_mission_statement_points,
+	
+	<div class="relative w-full before:absolute before:bottom-0 before:left-0 before:w-full before:h-[90%] before:z-0 before:bg-primary pb-4">
+		<div class="container flex flex-wrap justify-between max-w-screen-3xl">
+		{% for team in team_members %}
+			{% include "_components/team-card.twig" with {
+				name: team.title,
+				role: team.role_title,
+				image: team.meta('profile_image'),
+				bio: team.meta('bio'),
 			} %}
-
-		{% endif %}
-
-	{% endfor %}	
+		{% endfor %}
+		</div>
+	</div>
 
 	{% include "_components/video.twig" %}
 
 	{% include "_components/acknowledgments.twig" %}
-
-	{% include "_components/news-feed.twig" with {
-		posts: newsPosts
-	} only %}
-
-	{% include "_components/reviews.twig" %}
 
 {% endblock %}

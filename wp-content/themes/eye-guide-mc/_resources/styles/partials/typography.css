@@ -26,7 +26,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  @apply text-[25px] lg:text-[45px];
+  @apply text-[25px] lg:text-[40px];
 }
 
 h3, .h3 {

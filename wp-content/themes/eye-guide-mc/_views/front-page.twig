@@ -16,33 +16,31 @@
 
 	{% for block in post.meta('page_builder') %}
 
-	{% if block.acf_fc_layout == "centered_text" %}
+		{% if block.acf_fc_layout == "centered_text" %}
 
-		{% include "_components/centered-content.twig" with {
-			heading: block.heading,
-			content: block.content,
-			hasButton: block.has_button,
-			buttonText: block.button_text,
-			buttonDestination: block.button_destination,
-		} %}
+			{% include "_components/centered-content.twig" with {
+				heading: block.heading,
+				content: block.content,
+				hasButton: block.has_button,
+				buttonText: block.button_text,
+				buttonDestination: block.button_destination,
+			} %}
 
-	{% endif %}
+		{% endif %}
 
-	{% if block.acf_fc_layout == "dark_background_content" %}
+		{% if block.acf_fc_layout == "dark_background_content" %}
 
-		{% include "_components/dark-bg-content.twig" with {
-			heading: block.heading,
-			content: block.content,
-			images: block.imagery,
-			addDisclaimer: block.add_disclaimer,
-			addMissionStatement: block.add_mission_statement_points,
-		} %}
+			{% include "_components/dark-bg-content.twig" with {
+				heading: block.heading,
+				content: block.content,
+				images: block.imagery,
+				addDisclaimer: block.add_disclaimer,
+				addMissionStatement: block.add_mission_statement_points,
+			} %}
 
-	{% endif %}
+		{% endif %}
 
 	{% endfor %}
-
-
 	
 
 	{% include "_components/video.twig" %}

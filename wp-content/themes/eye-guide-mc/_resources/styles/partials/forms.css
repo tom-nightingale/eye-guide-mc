@@ -5,8 +5,6 @@
 --------------------------------------------------- */
 
 form {
-  @apply py-6;
-
   input[type="text"],
   input[type="password"],
   input[type="email"],
@@ -24,10 +22,18 @@ form {
   select,
   select[multiple],
   textarea {
-    @apply border-gray-300 rounded shadow-sm;
+    @apply p-4 rounded border-primary/50;
   }
 
   textarea {
     @apply h-32;
+  }
+
+  input[type=submit] {
+    @apply p-4 ml-auto font-serif text-lg text-white transition duration-300 cursor-pointer bg-tertiary;
+
+    &:hover {
+      @apply bg-tertiary-dark;
+    }
   }
 }

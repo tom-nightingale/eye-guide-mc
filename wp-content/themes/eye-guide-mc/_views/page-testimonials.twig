@@ -1,0 +1,63 @@
+{% extends '_layout/base.twig' %}
+
+{% block hero %}
+	{% include "_components/hero.twig" with {
+		imageLeft: post.meta('hero_image_left'),
+		imageRight: post.meta('hero_image_right'),
+		heading: post.hero_heading,
+		subheading: post.hero_subheading,
+		heroButton: post.hero_button,
+		heroButtonText: post.hero_button_text,
+		heroButtonDestination: post.hero_button_destination,
+	} %}
+{% endblock %}
+
+{% block content %}
+
+	<ul class="flex justify-center max-w-screen-lg mx-auto my-16 font-serif text-3xl tabs">
+		<li><a data-tab="tab-videos" class="p-4 tab text-primary-lightest" href="">Videos</a></li>
+		<li><a data-tab="tab-testimonials" class="p-4 opacity-50 tab" href="">Testimonials</a></li>
+	</ul>
+
+	<div class="py-8 bg-primary">
+	
+		<div class="container">
+			
+			<div class="flex flex-wrap justify-center tab-content tab-videos">
+				{% for video in videos %}
+
+					<div class="relative w-full p-4 sm:p-8 z-1 sm:w-1/2 lg:w-1/3">
+						<div class="h-full border-8 border-white">
+							<iframe width="100%" height="400" class="lazyload" data-src="{{video.video_embed_link}}" title="YouTube video player"
+								frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+						</div>
+					</div>
+				
+				{% endfor %}
+			</div>
+
+			<div class="flex flex-wrap justify-center hidden tab-content tab-testimonials">
+				{% for review in reviews %}
+					<div class="relative w-full p-4 sm:p-8 z-1 sm:w-1/2 lg:w-1/3">
+						<div class="h-full p-8 bg-white md:p-12">
+							<p class="mb-0 leading-tight h4">{{review.name}}</p>
+							<div class="mt-4 copy">
+								{{review.testimonial}}
+							</div>
+						</div>
+					</div>				
+				{% endfor %}
+			</div>
+
+		</div>
+
+	</div>	
+
+	{% include "_components/acknowledgments.twig" %}
+
+	{% include "_components/news-feed.twig" with {
+		posts: newsPosts
+	} only %}
+
+{% endblock %}

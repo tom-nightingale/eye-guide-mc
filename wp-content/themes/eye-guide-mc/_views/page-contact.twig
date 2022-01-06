@@ -1,0 +1,57 @@
+{% extends '_layout/base.twig' %}
+
+{% block hero %}
+	{% include "_components/hero.twig" with {
+		imageLeft: post.meta('hero_image_left'),
+		imageRight: post.meta('hero_image_right'),
+		heading: post.hero_heading,
+		subheading: post.hero_subheading,
+		heroButton: post.hero_button,
+		heroButtonText: post.hero_button_text,
+		heroButtonDestination: post.hero_button_destination,
+	} %}
+{% endblock %}
+
+{% block content %}
+
+	<div class="container">
+
+		<div class="flex flex-wrap">
+
+			<div class="order-2 w-full p-8 lg:w-1/2 lg:py-16 xl:p-24 ">
+
+				<div class="mx-auto max-w-2/3 text-primary">
+					<p class="h2">Email us</p>
+					{{ function('do_shortcode', '[hf_form slug="contact-form"]') }}
+				</div>
+			</div>
+
+			<div class="w-full p-8 lg:py-16 xl:p-24 lg:w-1/2 lg:order-3">
+				
+				<p class="h2">Contact Details</p>
+
+				<p class="mb-4 text-lg">{{ function('icon', 'icon-map-marker-alt', 'text-secondary') }} <span class="font-semibold">{{site.title}},</span>
+					{{ function('address_inline') }}</p>
+
+				{% include "_components/phone-number.twig" with {
+					icon: true,
+					classes: 'font-semibold',
+					calltag: true,
+				} %}
+
+				<p class="mt-4">{{ function('icon', 'envelope', 'text-secondary') }} <a class="font-semibold" href="mailto:{{options.site_email}}">{{options.site_email}}</a></p>
+
+				<iframe class="mt-8 lazyload"
+					data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2413.117280245964!2d0.11880241581733383!3d52.78419327986503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d7f95e69815555%3A0xeac502130a0c949!2sEye%20Guide%20Mc%20Ltd!5e0!3m2!1sen!2suk!4v1641509019269!5m2!1sen!2suk"
+					width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				
+			</div>
+			
+		</div>
+	</div>
+
+	{% include "_components/news-feed.twig" with {
+	posts: newsPosts
+	} only %}
+
+{% endblock %}

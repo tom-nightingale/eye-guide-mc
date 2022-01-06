@@ -42,6 +42,8 @@
         'posts_per_page' => '3',
         'orderby' => 'date',
         'order' => 'DESC',
+        'meta_key'		=> 'type',
+	      'meta_value'	=> 'text_review'
       ];
       // Menus
       $context['site'] = $this;
