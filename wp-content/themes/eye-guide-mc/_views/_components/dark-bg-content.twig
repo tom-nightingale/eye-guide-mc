@@ -60,8 +60,8 @@
 
             <div class="w-1/2 p-4 lg:w-full lg:mb-8">
 
-                <a class="block overflow-hidden" data-fslightbox href="{{image.url}}">
-                    <img class="object-cover object-center w-full transition duration-300 lazyload hover:transform hover:scale-110" src="" data-src="{{image.sizes.large}}" alt="{{site.title}}">
+                <a class="block overflow-hidden" data-fslightbox href="{{image.url|towebp}}">
+                    <img width="352" height="192" class="object-cover object-center w-full transition duration-300 lazyload hover:transform hover:scale-110" src="" data-src="{{image.sizes.large}}" alt="{{site.title}}">
                 </a>
 
             </div>
