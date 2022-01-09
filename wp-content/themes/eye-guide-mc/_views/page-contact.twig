@@ -18,28 +18,41 @@
 
 		<div class="flex flex-wrap">
 
-			<div class="order-2 w-full p-8 lg:w-1/2 lg:py-16 xl:p-24 ">
+			<div class="order-2 w-full p-8 lg:p-8 lg:w-1/2 lg:py-16 xl:p-24 ">
 
 				<div class="mx-auto max-w-2/3 text-primary">
-					<p class="h2">Email us</p>
+					
+					<div class="p-2">
+						<p class="h2">Email us</p>
+						<p>Get in touch with us using the form below and we'll get back to you as soon as we can.</p>
+					</div>
 					{{ function('do_shortcode', '[hf_form slug="contact-form"]') }}
 				</div>
 			</div>
 
 			<div class="w-full p-8 lg:py-16 xl:p-24 lg:w-1/2 lg:order-3">
+
+				<div class="p-8 text-white bg-primary md:p-12">
 				
-				<p class="h2">Contact Details</p>
+					<p class="h2">Contact Details</p>
 
-				<p class="mb-4 text-lg">{{ function('icon', 'icon-map-marker-alt', 'text-secondary') }} <span class="font-semibold">{{site.title}},</span>
-					{{ function('address_inline') }}</p>
+					<p class="mb-4 ">{{ function('icon', 'map-marker-alt', 'text-secondary') }} <span class="font-semibold">{{site.title}},</span>
+						{{ function('address_inline') }}</p>
 
-				{% include "_components/phone-number.twig" with {
-					icon: true,
-					classes: 'font-semibold',
-					calltag: true,
-				} %}
+						{% include "_components/phone-number.twig" with {
+						icon: true,
+						classes: 'font-semibold relative text-secondary after:absolute after:bottom-[-5px] after:left-0 after:h-[1px] after:w-0 hover:after:w-full
+						after:transition-all after:duration-300 after:bg-secondary',
+						calltag: true,
+					} %}
 
-				<p class="mt-4">{{ function('icon', 'envelope', 'text-secondary') }} <a class="font-semibold" href="mailto:{{options.site_email}}">{{options.site_email}}</a></p>
+					<p class="mt-4">
+						<span class="relative text-secondary after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 hover:after:w-full after:transition-all after:duration-300 after:bg-secondary">
+							{{ function('icon', 'envelope', 'text-secondary') }} <a class="font-semibold" href="mailto:{{options.site_email}}">{{options.site_email}}</a>
+						</span>
+					</p>
+
+				</div>
 
 				<iframe class="mt-8 lazyload"
 					data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2413.117280245964!2d0.11880241581733383!3d52.78419327986503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d7f95e69815555%3A0xeac502130a0c949!2sEye%20Guide%20Mc%20Ltd!5e0!3m2!1sen!2suk!4v1641509019269!5m2!1sen!2suk"

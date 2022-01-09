@@ -46,7 +46,7 @@ h4, .h4 {
   }
 
   a {
-    @apply inline-block text-primary;
+    @apply inline-block text-secondary;
 
     &:hover {
       @apply underline;
