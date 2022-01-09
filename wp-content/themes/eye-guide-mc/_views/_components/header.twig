@@ -3,9 +3,9 @@
 	<div class="relative hidden text-white bg-primary top-bar lg:block">
 	
 		<div class="container flex items-center justify-end py-3">
-	
-			<p class="mr-8">{{function('icon', 'clock', 'text-secondary mr-1')}} Open today <span class="font-semibold">9am
-					- 5pm</span></p>
+			
+			{% set today = 'now'|date('l')|lower %}
+			<p class="mr-8">{{function('icon', 'clock', 'text-secondary mr-1')}} {{openingHours[today]}}</p>
 	
 			{% include "_components/phone-number.twig" with {
 			icon: true,

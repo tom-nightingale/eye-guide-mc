@@ -45,6 +45,10 @@
         'meta_key'		=> 'type',
 	      'meta_value'	=> 'text_review'
       ];
+
+      //Opening Hours
+      $openingHours = get_field('opening_hours', 'option');
+      $context['openingHours'] = $openingHours;
       // Menus
       $context['site'] = $this;
       $context['options'] = get_fields('option');
