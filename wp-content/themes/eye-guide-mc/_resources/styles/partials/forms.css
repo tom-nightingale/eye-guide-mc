@@ -22,7 +22,7 @@ form {
   select,
   select[multiple],
   textarea {
-    @apply p-4 rounded border-primary/50;
+    @apply p-4 border-primary/50;
   }
 
   textarea {

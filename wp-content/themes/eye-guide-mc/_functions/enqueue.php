@@ -9,7 +9,8 @@
 
         // Localize the themeURL to our production file so we can use it to complete file paths
         wp_localize_script('production', 'themeURL', array(
-          'themeURL' => get_stylesheet_directory_uri()
-          )
+          'themeURL' => get_stylesheet_directory_uri(),
+          'site_url' => get_site_url(),
+        )
 		);
     });

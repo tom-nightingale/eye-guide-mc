@@ -24,10 +24,11 @@ Desktop Navs
       @apply absolute bottom-0 w-4 h-4 transform -translate-x-1/2 opacity-50 left-1/2;
     }
 
-    /* .current-menu-item > a,
-    .current-menu-parent > a {
-      @apply text-red-500;
-    } */
+    .current-menu-item > a,
+    .current-menu-parent > a,
+    .current_page_parent > a {
+      @apply text-red-500 bg-white before:absolute before:h-1 before:w-full before:bg-tertiary before:top-0 before:left-0;
+    }
   }
 
   .sub-menu {

@@ -6,20 +6,20 @@ Mobile Nav
 $menuTitleHeight: 59px;
 
 /* Colours */
-$mobNavBg: theme("colors.gray.100");
+$mobNavBg: theme("colors.primary.DEFAULT");
 
-$titleBg: theme("colors.gray.300");
-$titleText: theme("colors.gray.600");
+$titleBg: theme("colors.primary.light");
+$titleText: theme("colors.white");
 
-$linkText: theme("colors.gray.800");
+$linkText: theme("colors.white");
 $linkBg: transparent;
-$linkBorder: theme("colors.gray.200");
+$linkBorder: theme("colors.primary.dark");
 
 $linkTextActive: theme("colors.white");
 $linkBgActive: theme("colors.gray.600");
 
-$linkTextOn: theme("colors.gray.300");
-$linkBgOn: theme("colors.gray.800");
+$linkTextOn: theme("colors.white");
+$linkBgOn: theme("colors.secondary.DEFAULT");
 
 $dropdownArrowBg: transparent;
 $dropdownArrowText: inherit;
@@ -155,12 +155,10 @@ $closeTextBg: theme("colors.red.800");
 }
 
 .mob-nav-underlay {
-  @apply fixed top-0 bottom-0 left-0 right-0 invisible w-full h-full opacity-0;
+  @apply fixed top-0 bottom-0 left-0 right-0 invisible w-full h-full transition duration-300 bg-black opacity-0 bg-opacity-40;
   display: block !important;
   /* override critical css */
-  background-color: rgba(#000, 0.4);
   z-index: 999999;
-  transition: 0.3s;
 
   &.mob-nav--active {
     @apply visible opacity-100;

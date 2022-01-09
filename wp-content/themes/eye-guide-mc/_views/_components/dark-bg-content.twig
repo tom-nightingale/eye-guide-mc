@@ -1,6 +1,6 @@
-<div class="relative p-4 before:absolute before:bottom-0 before:left-0 before:w-full before:h-[92%] before:z-[-1] before:bg-primary dark-bg-content">
+<div class="relative before:absolute before:bottom-0 before:left-0 before:w-full {{showWCU ? 'before:h-full p-4 lg:p-0 md:before:h-[92%]' : 'before:h-full'}} before:z-[-1] before:bg-primary dark-bg-content">
 
-    {% if options.why_choose_us %}
+    {% if showWCU and options.why_choose_us %}
 
         <div class="container flex flex-wrap p-0 max-w-screen-3xl">
 
@@ -19,18 +19,21 @@
 
     {% endif %}
 
-
-    <div class="container relative flex-wrap items-start mt-8 text-white z-1 max-w-screen-3xl lg:flex">
+    <div class="container relative flex-wrap items-start p-4 py-8 text-white lg:py-16 z-1 max-w-screen-3xl lg:flex">
 
         <div class="lg:w-3/5 xl:w-3/4">
 
-            <h2
-                class="inline-block relative after:absolute after:bg-tertiary after:w-full after:h-[2px] after:bottom-0 after:left-0 mb-8">
-                {{heading}}</h2>
+            <div class="lg:w-4/5">
 
-            <div class="mb-8 lg:w-4/5 dark-content">
+                <h2
+                    class="inline-block relative after:absolute after:bg-tertiary after:w-full after:h-[2px] after:bottom-0 after:left-0 mb-8">
+                    {{heading}}</h2>
 
-                {{content}}
+                <div class="mb-8 dark-content copy">
+
+                    {{content}}
+
+                </div>
 
             </div>
 
@@ -51,13 +54,13 @@
 
         {% if images %}
 
-        <div class="flex flex-wrap mt-8 -mx-4 lg:mt-0 lg:mx-0 lg:w-2/5 xl:w-1/4">
+        <div class="flex flex-wrap mt-8 -mx-4 lg:mt-0 lg:mx-0 lg:w-2/5 xl:w-1/4 lg:sticky lg:top-4">
 
             {% for image in images %}
 
-                <div class="w-1/2 p-4 lg:w-full lg:mb-8">
+                <a class="block w-1/2 p-4 lg:w-full lg:mb-8" data-fslightbox href="{{image.url}}">
                     <img class="object-cover object-center w-full lazyload" src="" data-src="{{image.sizes.large}}" alt="{{site.title}}">
-                </div>
+                </a>
 
             {% endfor %}
 

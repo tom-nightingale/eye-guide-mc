@@ -30,7 +30,7 @@
 					{% for item in primaryMenu.items %}
 					<li class="{{item.class}}">
 						<a href="{{item.link}}"
-							class="border-l-2 border-l-white hover:bg-white relative block p-2 xl:p-4 3xl:px-6 py-6 xl:py-10 xl:pt-8 2xl:pt-10 2xl:py-12 text-sm xl:text-base hover:text-black focus:text-black {{ item.current ? 'bg-white before:absolute before:h-1 before:w-full before:bg-tertiary before:top-0 before:left-0' }}">{{item.name}}</a>
+							class="relative block p-2 py-6 text-sm border-l-2 border-l-white hover:bg-white xl:p-4 3xl:px-6 xl:py-10 xl:pt-8 2xl:pt-10 2xl:py-12 xl:text-base hover:text-black focus:text-black">{{item.name}}</a>
 						{% if item.children %}
 						<ul class="sub-menu">
 							{% for child in item.children %}

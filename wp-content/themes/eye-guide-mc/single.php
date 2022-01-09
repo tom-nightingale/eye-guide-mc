@@ -9,10 +9,17 @@ $context['categories'] = get_categories( array(
     'order'   => 'ASC'
 ) );
 
+$args = [
+    'post_type' => 'page',
+    'p' => '16'
+];
+$news = new TImber\PostQuery($args);
+$context['news'] = $news[0];
+
 Timber::render( [ 'single.twig' ], $context );
 
 if (is_single()) { ?>
-<script type="text/javascript">
-  document.querySelector('.current_page_parent').classList.add('current-menu-item');
-</script>
+  <script type="text/javascript">
+    document.querySelector('.current_page_parent').classList.add('current-menu-item');
+  </script>
 <?php }

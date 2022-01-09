@@ -31,6 +31,7 @@
 		{% if block.acf_fc_layout == "dark_background_content" %}
 
 			{% include "_components/dark-bg-content.twig" with {
+				showWCU: block.show_why_choose_us_points,
 				heading: block.heading,
 				content: block.content,
 				images: block.imagery,
