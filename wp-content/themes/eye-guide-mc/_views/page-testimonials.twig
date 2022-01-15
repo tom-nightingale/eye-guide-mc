@@ -27,11 +27,26 @@
 				{% for video in videos %}
 
 					<div class="relative w-full p-4 sm:p-8 z-1 sm:w-1/2 lg:w-1/3">
-						<div class="h-full border-8 border-white">
-							<iframe width="100%" height="400" class="lazyload" data-src="{{video.video_embed_link}}" title="YouTube video player"
-								frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen></iframe>
-						</div>
+
+						{% if video.video_type == "media_library" %}
+						
+							<video controls preload="none" class="w-full border-8 border-white" poster="{{video.meta('video_poster').sizes.medium_large}}">
+							
+								<source src="{{video.meta('video_media_file').url}}" type="video/mp4">
+							
+								Sorry, your browser doesn't support embedded videos.
+							
+							</video>
+							
+						{% else %}
+							
+							<div class="w-full h-full bg-gray-100 border-8 border-white video-embed">
+							
+								{{video.video_embed_link}}
+							
+							</div>
+						
+						{% endif %}
 					</div>
 				
 				{% endfor %}

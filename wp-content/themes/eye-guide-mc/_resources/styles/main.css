@@ -34,3 +34,7 @@
 .hero + .dark-bg-content {
     @apply mt-10;
 }
+
+.video-embed iframe {
+    @apply w-full h-full;
+}

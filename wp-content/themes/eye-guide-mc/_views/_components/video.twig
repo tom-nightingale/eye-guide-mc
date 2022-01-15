@@ -21,13 +21,25 @@
 
             <div class="order-1 w-full mb-4 md:w-7/12 md:order-2 md:mb-0">
 
-                <video controls class="w-full mb-5 md:mb-0">
+                {% if options.video_type == "media_library" %}
 
-                    <source src="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1280_10MG.mp4" type="video/mp4">
+                    <video controls preload="none" class="w-full mb-5 md:mb-0" poster="{{options.video_poster_image.sizes.medium_large}}">
 
-                    Sorry, your browser doesn't support embedded videos.
+                        <source src="{{options.video_from_library.url}}" type="video/mp4">
 
-                </video>
+                        Sorry, your browser doesn't support embedded videos.
+
+                    </video>
+
+                {% else %}
+
+                    <div class="h-[300px] lg:h-[600px] bg-gray-100 video-embed">
+
+                        {{options.embed_code}}
+
+                    </div>
+
+                {% endif %}
 
             </div>
             
