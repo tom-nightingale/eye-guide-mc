@@ -48,12 +48,12 @@
 
 					<p class="mt-4">
 						<span class="relative text-secondary after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 hover:after:w-full after:transition-all after:duration-300 after:bg-secondary">
-							{{ function('icon', 'envelope', 'text-secondary') }} <a class="font-semibold" href="mailto:{{options.site_email}}">{{options.site_email}}</a>
+							{{ function('icon', 'envelope', 'text-secondary') }} <a class="font-semibold" href="mailto:{{options.site_email}}" onClick="gtag('event' , 'click' , { 'event_category' : 'Main contact page email link', 'event_label' : 'Main contact page email Link' });">{{options.site_email}}</a>
 						</span>
 					</p>
 
 					<p class="mt-16">For all media enquiries, contact: Emily Winsor-Russell at Eden PR.</p>
-					<p><a class="hover:text-secondary" href="mailto:emily@edenpr.co.uk">emily@edenpr.co.uk</a> | <a class="hover:text-secondary" href="tel:01159588850">0115 958 8850</a></p>
+					<p><a class="hover:text-secondary" href="mailto:emily@edenpr.co.uk" onClick="gtag('event' , 'click' , { 'event_category' : 'Eden PR contact page email link', 'event_label' : 'Eden PR contact page email Link' });">emily@edenpr.co.uk</a> | <a class="hover:text-secondary" href="tel:01159588850">0115 958 8850</a></p>
 
 				</div>
 

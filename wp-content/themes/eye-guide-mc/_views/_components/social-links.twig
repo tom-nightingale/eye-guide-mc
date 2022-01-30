@@ -1,9 +1,9 @@
-{% if options.social_twitter %}
-  <a rel="noopener noreferrer" aria-label="Twitter" target="_blank" class="{{ linkClasses }}" href="{{ options.social_twitter }}">Twitter</a>
+ {% if options.social_twitter %}
+  <a rel="noopener noreferrer" aria-label="Twitter" target="_blank" class="{{ linkClasses }}" href="{{ options.social_twitter }}" onClick="gtag('event' , 'click' , { 'event_category' : 'Twitter footer link', 'event_label' : 'Twitter Footer Link' });">Twitter</a>
 {% endif %}
 
 {% if options.social_facebook %}
-  <a rel="noopener noreferrer" aria-label="Facebook" target="_blank" class="{{ linkClasses }}" href="{{ options.social_facebook }}">Facebook</a>
+  <a rel="noopener noreferrer" aria-label="Facebook" target="_blank" class="{{ linkClasses }}" href="{{ options.social_facebook }}" onClick="gtag('event' , 'click' , { 'event_category' : 'Facebook footer link', 'event_label' : 'Facebook Footer Link' });">Facebook</a>
 {% endif %}
 
 {% if options.social_instagram %}
