@@ -3,7 +3,7 @@
 Plugin Name: WP Fastest Cache
 Plugin URI: http://wordpress.org/plugins/wp-fastest-cache/
 Description: The simplest and fastest WP Cache system
-Version: 0.9.7
+Version: 0.9.8
 Author: Emre Vona
 Author URI: http://tr.linkedin.com/in/emrevona
 Text Domain: wp-fastest-cache
@@ -157,22 +157,11 @@ GNU General Public License for more details.
 			add_action("wpfc_clear_all_site_cache", array($this, 'wpfc_clear_cache_of_allsites_callback'));
 			add_action("wpfc_clear_post_cache_by_id", array($this, 'singleDeleteCache'), 10, 2);
 
-
-
-			if($this->isPluginActive('classic-editor/classic-editor.php') || $this->isPluginActive('disable-gutenberg/disable-gutenberg.php')){
-				// to create cache for single content
-				add_action("add_meta_boxes", array($this, "add_meta_box"), 10, 2);
-				add_action('admin_notices', array($this, 'single_preload_inline_js'));
-				add_action('wp_ajax_wpfc_preload_single_save_settings', array($this, "wpfc_preload_single_save_settings_callback"));
-				add_action('wp_ajax_wpfc_preload_single', array($this, "wpfc_preload_single_callback"));
-			}
-
-
-
+			// to enable Auto Cache Panel for the classic editor
+			add_action( 'admin_init', array($this, 'enable_auto_cache_settings_panel'));
 
 			// to add settings link
 			add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array($this, 'action_links'));
-
 
 			// to clear cache after ajax request by other plugins
 			if(isset($_POST["action"])){
@@ -346,6 +335,15 @@ GNU General Public License for more details.
 			}
 		}
 
+		public function enable_auto_cache_settings_panel(){
+			if($this->isPluginActive('classic-editor/classic-editor.php') || $this->isPluginActive('disable-gutenberg/disable-gutenberg.php') || has_filter("use_block_editor_for_post", "__return_false")){
+				add_action("add_meta_boxes", array($this, "add_meta_box"), 10, 2);
+				add_action('admin_notices', array($this, 'single_preload_inline_js'));
+				add_action('wp_ajax_wpfc_preload_single_save_settings', array($this, "wpfc_preload_single_save_settings_callback"));
+				add_action('wp_ajax_wpfc_preload_single', array($this, "wpfc_preload_single_callback"));
+			}
+		}
+
 		public function clear_cache_after_activate_plugin(){
 			$this->deleteCache(true);
 		}
@@ -361,7 +359,16 @@ GNU General Public License for more details.
 		public function clear_cache_after_update_plugin($upgrader_object, $options){
 			if($options['action'] == 'update'){
 				if($options['type'] == 'plugin' && (isset($options['plugins']) || isset($options['plugin']))){
-					$this->deleteCache(true);
+
+					$options_json = json_encode($options);
+
+					if(preg_match("/elementor\\\\\/elementor\.php/i", $options_json)){
+						$this->deleteCache(true);
+					}
+
+					if(defined("WPFC_CLEAR_CACHE_AFTER_PLUGIN_UPDATE") && WPFC_CLEAR_CACHE_AFTER_PLUGIN_UPDATE){
+						$this->deleteCache(true);
+					}
 				}
 			}
 		}
@@ -369,7 +376,11 @@ GNU General Public License for more details.
 		public function clear_cache_after_update_theme($upgrader_object, $options){
 			if($options['action'] == 'update'){
 				if($options['type'] == 'theme' && isset($options['themes'])){
-					$this->deleteCache(true);
+
+					if(defined("WPFC_CLEAR_CACHE_AFTER_THEME_UPDATE") && WPFC_CLEAR_CACHE_AFTER_THEME_UPDATE){
+						$this->deleteCache(true);
+					}
+
 				}
 			}
 		}
