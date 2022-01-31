@@ -7,6 +7,14 @@
         //   wp_enqueue_script('scripts-uniquename', get_theme_file_uri() . '/dist/production-scriptname.js','', '', true);
         // }
 
+        if( is_page('testimonials') ){
+          wp_enqueue_script('scripts-uniquename', get_theme_file_uri() . '/dist/production-testimonial-tabs.js','', '', true);
+        }
+
+        if(is_home()){
+          wp_enqueue_script('scripts-uniquename', get_theme_file_uri() . '/dist/production-livesearch.js','', '', true);
+        }
+
         // Localize the themeURL to our production file so we can use it to complete file paths
         wp_localize_script('production', 'themeURL', array(
           'themeURL' => get_stylesheet_directory_uri(),

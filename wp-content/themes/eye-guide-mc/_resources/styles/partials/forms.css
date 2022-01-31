@@ -29,6 +29,10 @@ form {
     @apply h-32;
   }
 
+  select {
+    @apply w-full p-4 mb-4;
+  }
+
   input[type=submit] {
     @apply p-4 ml-auto font-serif text-lg text-white transition duration-300 cursor-pointer bg-tertiary;
 

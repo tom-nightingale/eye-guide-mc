@@ -5,8 +5,10 @@
 
 		<div class="my-8">
 			<a href="tel:{{options.default_phone_number}}" class="btn btn--outline-white" onClick="gtag('event' , 'click' , { 'event_category' : 'Number footer link', 'event_label' : 'Number Footer Link' });">Call us on {{options.default_phone_number}}</a>
-			<span class="block p-2 md:inline-block">or</span>
-			<a href="{{site.url}}/contact/" class="btn btn--white">Contact us online</a>
+			{% if contact == false %}
+				<span class="block p-2 md:inline-block">or</span>
+				<a href="{{site.url}}/contact/" class="btn btn--white">Contact us online</a>
+			{% endif %}
 		</div>
 	</div>
 </div>

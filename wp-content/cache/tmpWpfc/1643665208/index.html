@@ -1,0 +1,2808 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+						<style>
+					@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Source+Serif+Pro:wght@600&display=swap');/*! tailwindcss v2.2.18 | MIT License | https://tailwindcss.com *//*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize *//*
+Document
+========
+*//**
+Use a better box model (opinionated).
+*/*,
+::before,
+::after {
+	box-sizing: border-box;
+}/**
+Use a more readable tab size (opinionated).
+*/html {
+	-moz-tab-size: 4;
+	tab-size: 4;
+}/**
+1. Correct the line height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+*/html {
+	line-height: 1.15; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+}/*
+Sections
+========
+*//**
+Remove the margin in all browsers.
+*/body {
+	margin: 0;
+}/**
+Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+*/body {
+	font-family:
+		system-ui,
+		-apple-system, /* Firefox supports this but not yet `system-ui` */
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji';
+}/*
+Grouping content
+================
+*//**
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+*/hr {
+	height: 0; /* 1 */
+	color: inherit; /* 2 */
+}/*
+Text-level semantics
+====================
+*//**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/abbr[title] {
+	text-decoration: underline dotted;
+}/**
+Add the correct font weight in Edge and Safari.
+*/b,
+strong {
+	font-weight: bolder;
+}/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/code,
+kbd,
+samp,
+pre {
+	font-family:
+		ui-monospace,
+		SFMono-Regular,
+		Consolas,
+		'Liberation Mono',
+		Menlo,
+		monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}/**
+Add the correct font size in all browsers.
+*/small {
+	font-size: 80%;
+}/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}sub {
+	bottom: -0.25em;
+}sup {
+	top: -0.5em;
+}/*
+Tabular data
+============
+*//**
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/table {
+	text-indent: 0; /* 1 */
+	border-color: inherit; /* 2 */
+}/*
+Forms
+=====
+*//**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
+}/**
+Remove the inheritance of text transform in Edge and Firefox.
+1. Remove the inheritance of text transform in Firefox.
+*/button,
+select { /* 1 */
+	text-transform: none;
+}/**
+Correct the inability to style clickable types in iOS and Safari.
+*/button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	-webkit-appearance: button;
+}/**
+Remove the inner border and padding in Firefox.
+*/::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}/**
+Restore the focus styles unset by the previous rule.
+*/:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/:-moz-ui-invalid {
+	box-shadow: none;
+}/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/legend {
+	padding: 0;
+}/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/progress {
+	vertical-align: baseline;
+}/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	height: auto;
+}/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/[type='search'] {
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+}/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/::-webkit-search-decoration {
+	-webkit-appearance: none;
+}/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/::-webkit-file-upload-button {
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
+}/*
+Interactive
+===========
+*//*
+Add the correct display in Chrome and Safari.
+*/summary {
+	display: list-item;
+}/**
+ * Manually forked from SUIT CSS Base: https://github.com/suitcss/base
+ * A thin layer on top of normalize.css that provides a starting point more
+ * suitable for web applications.
+ *//**
+ * Removes the default spacing and border for appropriate elements.
+ */blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}button {
+  background-color: transparent;
+  background-image: none;
+}fieldset {
+  margin: 0;
+  padding: 0;
+}ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}/**
+ * Tailwind custom reset styles
+ *//**
+ * 1. Use the user's configured `sans` font-family (with Tailwind's default
+ *    sans-serif font stack as a fallback) as a sane default.
+ * 2. Use Tailwind's default "normal" line-height so the user isn't forced
+ *    to override it to ensure consistency even when using the default theme.
+ */html {
+  font-family: Raleway, sans-serif; /* 1 */
+  line-height: 1.5; /* 2 */
+}/**
+ * Inherit font-family and line-height from `html` so users can set them as
+ * a class directly on the `html` element.
+ */body {
+  font-family: inherit;
+  line-height: inherit;
+}/**
+ * 1. Prevent padding and border from affecting element width.
+ *
+ *    We used to set this in the html element and inherit from
+ *    the parent element for everything else. This caused issues
+ *    in shadow-dom-enhanced elements like <details> where the content
+ *    is wrapped by a div with box-sizing set to `content-box`.
+ *
+ *    https://github.com/mozdevs/cssremedy/issues/4
+ *
+ *
+ * 2. Allow adding a border to an element by just adding a border-width.
+ *
+ *    By default, the way the browser specifies that an element should have no
+ *    border is by setting it's border-style to `none` in the user-agent
+ *    stylesheet.
+ *
+ *    In order to easily add borders to elements by just setting the `border-width`
+ *    property, we change the default border-style for all elements to `solid`, and
+ *    use border-width to hide them instead. This way our `border` utilities only
+ *    need to set the `border-width` property instead of the entire `border`
+ *    shorthand, making our border utilities much more straightforward to compose.
+ *
+ *    https://github.com/tailwindcss/tailwindcss/pull/116
+ */*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: currentColor; /* 2 */
+}/*
+ * Ensure horizontal rules are visible by default
+ */hr {
+  border-top-width: 1px;
+}/**
+ * Undo the `border-style: none` reset that Normalize applies to images so that
+ * our `border-{width}` utilities have the expected effect.
+ *
+ * The Normalize reset is unnecessary for us since we default the border-width
+ * to 0 on all elements.
+ *
+ * https://github.com/tailwindcss/tailwindcss/issues/362
+ */img {
+  border-style: solid;
+}textarea {
+  resize: vertical;
+}input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}button,
+[role="button"] {
+  cursor: pointer;
+}/**
+ * Override legacy focus reset from Normalize with modern Firefox focus styles.
+ *
+ * This is actually an improvement over the new defaults in Firefox in our testing,
+ * as it triggers the better focus styles even for links, which still use a dotted
+ * outline in Firefox by default.
+ */:-moz-focusring {
+	outline: auto;
+}table {
+  border-collapse: collapse;
+}h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}/**
+ * Reset links to optimize for opt-in styling instead of
+ * opt-out.
+ */a {
+  color: inherit;
+  text-decoration: inherit;
+}/**
+ * Reset form element properties that are easy to forget to
+ * style explicitly so you don't inadvertently introduce
+ * styles that deviate from your design system. These styles
+ * supplement a partial reset that is already applied by
+ * normalize.css.
+ */button,
+input,
+optgroup,
+select,
+textarea {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}/**
+ * Use the configured 'mono' font family for elements that
+ * are expected to be rendered with a monospace font, falling
+ * back to the system monospace stack if there is no configured
+ * 'mono' font family.
+ */pre,
+code,
+kbd,
+samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}/**
+ * 1. Make replaced elements `display: block` by default as that's
+ *    the behavior you want almost all of the time. Inspired by
+ *    CSS Remedy, with `svg` added as well.
+ *
+ *    https://github.com/mozdevs/cssremedy/issues/14
+ * 
+ * 2. Add `vertical-align: middle` to align replaced elements more
+ *    sensibly by default when overriding `display` by adding a
+ *    utility like `inline`.
+ *
+ *    This can trigger a poorly considered linting error in some
+ *    tools but is included by design.
+ * 
+ *    https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210
+ */img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}/**
+ * Constrain images and videos to the parent width and preserve
+ * their intrinsic aspect ratio.
+ *
+ * https://github.com/mozdevs/cssremedy/issues/14
+ */img,
+video {
+  max-width: 100%;
+  height: auto;
+}/**
+ * Ensure the default browser behavior of the `hidden` attribute.
+ */[hidden] {
+  display: none;
+}*, ::before, ::after{
+	--tw-translate-x: 0;
+	--tw-translate-y: 0;
+	--tw-rotate: 0;
+	--tw-skew-x: 0;
+	--tw-skew-y: 0;
+	--tw-scale-x: 1;
+	--tw-scale-y: 1;
+	--tw-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	--tw-border-opacity: 1;
+	border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+	--tw-ring-offset-shadow: 0 0 #0000;
+	--tw-ring-shadow: 0 0 #0000;
+	--tw-shadow: 0 0 #0000;
+	--tw-blur: var(--tw-empty,/*!*/ /*!*/);
+	--tw-brightness: var(--tw-empty,/*!*/ /*!*/);
+	--tw-contrast: var(--tw-empty,/*!*/ /*!*/);
+	--tw-grayscale: var(--tw-empty,/*!*/ /*!*/);
+	--tw-hue-rotate: var(--tw-empty,/*!*/ /*!*/);
+	--tw-invert: var(--tw-empty,/*!*/ /*!*/);
+	--tw-saturate: var(--tw-empty,/*!*/ /*!*/);
+	--tw-sepia: var(--tw-empty,/*!*/ /*!*/);
+	--tw-drop-shadow: var(--tw-empty,/*!*/ /*!*/);
+	--tw-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+      [type='text'],
+      [type='email'],
+      [type='url'],
+      [type='password'],
+      [type='number'],
+      [type='date'],
+      [type='datetime-local'],
+      [type='month'],
+      [type='search'],
+      [type='tel'],
+      [type='time'],
+      [type='week'],
+      [multiple],
+      textarea,
+      select
+    {
+	appearance: none;
+	background-color: #fff;
+	border-color: #6b7280;
+	border-width: 1px;
+	border-radius: 0px;
+	padding-top: 0.5rem;
+	padding-right: 0.75rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0.75rem;
+	font-size: 1rem;
+	line-height: 1.5rem;
+}[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus{
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+	--tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
+	--tw-ring-offset-width: 0px;
+	--tw-ring-offset-color: #fff;
+	--tw-ring-color: #2563eb;
+	--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+	--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+	box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+	border-color: #2563eb;
+}input::placeholder, textarea::placeholder{
+	color: #6b7280;
+	opacity: 1;
+}::-webkit-datetime-edit-fields-wrapper{
+	padding: 0;
+}::-webkit-date-and-time-value{
+	min-height: 1.5em;
+}select{
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+	background-position: right 0.5rem center;
+	background-repeat: no-repeat;
+	background-size: 1.5em 1.5em;
+	padding-right: 2.5rem;
+	color-adjust: exact;
+}[multiple]{
+	background-image: initial;
+	background-position: initial;
+	background-repeat: unset;
+	background-size: initial;
+	padding-right: 0.75rem;
+	color-adjust: unset;
+}
+      [type='checkbox'],
+      [type='radio']
+    {
+	appearance: none;
+	padding: 0;
+	color-adjust: exact;
+	display: inline-block;
+	vertical-align: middle;
+	background-origin: border-box;
+	user-select: none;
+	flex-shrink: 0;
+	height: 1rem;
+	width: 1rem;
+	color: #2563eb;
+	background-color: #fff;
+	border-color: #6b7280;
+	border-width: 1px;
+}[type='checkbox']{
+	border-radius: 0px;
+}[type='radio']{
+	border-radius: 100%;
+}
+      [type='checkbox']:focus,
+      [type='radio']:focus
+    {
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+	--tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
+	--tw-ring-offset-width: 2px;
+	--tw-ring-offset-color: #fff;
+	--tw-ring-color: #2563eb;
+	--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+	--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+	box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+      [type='checkbox']:checked,
+      [type='radio']:checked
+    {
+	border-color: transparent;
+	background-color: currentColor;
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}[type='checkbox']:checked{
+	background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+}[type='radio']:checked{
+	background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
+      [type='checkbox']:checked:hover,
+      [type='checkbox']:checked:focus,
+      [type='radio']:checked:hover,
+      [type='radio']:checked:focus
+    {
+	border-color: transparent;
+	background-color: currentColor;
+}[type='checkbox']:indeterminate{
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");
+	border-color: transparent;
+	background-color: currentColor;
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+      [type='checkbox']:indeterminate:hover,
+      [type='checkbox']:indeterminate:focus
+    {
+	border-color: transparent;
+	background-color: currentColor;
+}[type='file']{
+	background: unset;
+	border-color: inherit;
+	border-width: 0;
+	border-radius: 0;
+	padding: 0;
+	font-size: unset;
+	line-height: inherit;
+}[type='file']:focus{
+	outline: 1px auto -webkit-focus-ring-color;
+}/* ---------------------------------------------------
+Core
+--------------------------------------------------- */body,
+html {
+  min-height: 101%;
+  scroll-behavior: smooth;
+}body{
+	font-family: Raleway, sans-serif;
+	line-height: 1.625;
+	--tw-text-opacity: 1;
+	color: rgba(2, 31, 44, var(--tw-text-opacity));
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}/* Uses IntersectionObserver to identify when the viewport has scrolled, and then show back to top */#pixel-to-watch{
+	position: absolute;
+	left: 0px;
+  width: 1px;
+  height: 1px;
+  top: 300px;
+}.container{
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding-left: 1rem;
+	padding-right: 1rem;
+  max-width: calc(1900px + 2rem);
+}a{
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+	transition-duration: 300ms;
+}/***********************************************************
+Lazyload **************************************************/.lazyload, .lazyloading{
+	opacity: 0;
+}.lazyloaded{
+	transform: var(--tw-transform);
+	opacity: 1;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+	transition-duration: 300ms;
+}/***********************************************************
+SVG Icons **************************************************/.icon{
+	display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}/* ---------------------------------------------------
+Buttons
+--------------------------------------------------- */.btn{
+	display: inline-block;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	font-weight: 600;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+	transition-duration: 300ms;
+}.btn--primary{
+	--tw-bg-opacity: 1;
+	background-color: rgba(2, 31, 44, var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}.btn--primary:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(1, 8, 12, var(--tw-bg-opacity));
+}.btn--secondary{
+	--tw-bg-opacity: 1;
+	background-color: rgba(190, 160, 96, var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}.btn--secondary:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(179, 145, 73, var(--tw-bg-opacity));
+}.btn--outline-secondary{
+	border-width: 2px;
+	--tw-border-opacity: 1;
+	border-color: rgba(190, 160, 96, var(--tw-border-opacity));
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}.btn--outline-secondary:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(190, 160, 96, var(--tw-bg-opacity));
+}.btn--outline-secondary:hover{
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}.btn--tertiary{
+	--tw-bg-opacity: 1;
+	background-color: rgba(250, 83, 83, var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}.btn--tertiary:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(249, 50, 50, var(--tw-bg-opacity));
+}.btn--white{
+	border-width: 2px;
+	--tw-border-opacity: 1;
+	border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: rgba(250, 83, 83, var(--tw-text-opacity));
+}.btn--white:hover{
+	--tw-bg-opacity: 0.9;
+}.btn--outline-white{
+	border-width: 2px;
+	--tw-border-opacity: 1;
+	border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}.btn--outline-white:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}.btn--outline-white:hover{
+	--tw-text-opacity: 1;
+	color: rgba(250, 83, 83, var(--tw-text-opacity));
+}/* ---------------------------------------------------
+Cookie Notice
+--------------------------------------------------- */#wp-notification{
+	position: fixed;
+	bottom: 0px;
+	z-index: 50;
+	display: none;
+	width: 100%;
+	--tw-bg-opacity: 1;
+	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	--tw-text-opacity: 1;
+	color: rgba(107, 114, 128, var(--tw-text-opacity));
+}#wp-notification.open{
+	display: block;
+}.wp-notification-container{
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1rem;
+	text-align: center;
+}.wp-notification-container p{
+	margin: 0px;
+}.wp-notification-container a, #wp-notification-toggle{
+	margin-top: 1rem;
+	display: block;
+	border-width: 2px;
+	--tw-border-opacity: 1;
+	border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-weight: 700;
+	--tw-text-opacity: 1;
+	color: rgba(17, 24, 39, var(--tw-text-opacity));
+	text-decoration: none;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}.wp-notification-container a:hover,#wp-notification-toggle:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}#wp-notification-toggle{
+	cursor: pointer;
+	--tw-bg-opacity: 1;
+	background-color: rgba(156, 163, 175, var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}#wp-notification-toggle:hover{
+	--tw-border-opacity: 1;
+	border-color: rgba(17, 24, 39, var(--tw-border-opacity));
+}#wp-notification-toggle:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
+}.wp-notification-container a:hover{
+	text-decoration: none;
+}#wp-notification-toggle:hover{
+	opacity: 0.75;
+}@media (min-width: 768px) {
+
+  .wp-notification-container{
+		display: flex;
+	}
+
+  .wp-notification-container{
+		width: 100%;
+	}
+
+  .wp-notification-container{
+		flex-wrap: wrap;
+	}
+
+  .wp-notification-container{
+		align-items: center;
+	}
+
+  .wp-notification-container{
+		justify-content: space-between;
+	}
+
+  .wp-notification-container{
+		text-align: left;
+	}
+
+  #wp-notification-toggle, .wp-notification-container a{
+		margin-top: 0px;
+	}
+
+  #wp-notification-toggle, .wp-notification-container a{
+		margin-left: 1rem;
+	}
+
+  #wp-notification-toggle, .wp-notification-container a{
+		display: inline-block;
+	}
+}/* ---------------------------------------------------
+Desktop Navs
+--------------------------------------------------- */@media (min-width: 1024px) {
+    .menu-primary li,.menu-secondary li{
+		position: relative;
+	}
+      .menu-primary li:focus-within > .sub-menu,.menu-secondary li:focus-within > .sub-menu{
+		display: block;
+	}
+      .menu-primary li:focus-within > .sub-menu,.menu-secondary li:focus-within > .sub-menu{
+		opacity: 1;
+	}
+        .menu-primary a:hover + .sub-menu,.menu-secondary a:hover + .sub-menu{
+		display: block;
+	}
+        .menu-primary a:hover + .sub-menu,.menu-secondary a:hover + .sub-menu{
+		opacity: 1;
+	}
+
+    .menu-primary .icon-angle-down,.menu-secondary .icon-angle-down{
+		position: absolute;
+	}
+
+    .menu-primary .icon-angle-down,.menu-secondary .icon-angle-down{
+		bottom: 0px;
+	}
+
+    .menu-primary .icon-angle-down,.menu-secondary .icon-angle-down{
+		left: 50%;
+	}
+
+    .menu-primary .icon-angle-down,.menu-secondary .icon-angle-down{
+		height: 1rem;
+	}
+
+    .menu-primary .icon-angle-down,.menu-secondary .icon-angle-down{
+		width: 1rem;
+	}
+
+    .menu-primary .icon-angle-down,.menu-secondary .icon-angle-down{
+		--tw-translate-x: -50%;
+		transform: var(--tw-transform);
+	}
+
+    .menu-primary .icon-angle-down,.menu-secondary .icon-angle-down{
+		transform: var(--tw-transform);
+	}
+
+    .menu-primary .icon-angle-down,.menu-secondary .icon-angle-down{
+		opacity: 0.5;
+	}
+
+    .menu-primary .current-menu-item > a, .menu-primary .current-menu-parent > a, .menu-primary .current_page_parent > a, .menu-secondary .current-menu-item > a, .menu-secondary .current-menu-parent > a, .menu-secondary .current_page_parent > a{
+		--tw-bg-opacity: 1;
+		background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+	}
+
+    .menu-primary .current-menu-item > a, .menu-primary .current-menu-parent > a, .menu-primary .current_page_parent > a, .menu-secondary .current-menu-item > a, .menu-secondary .current-menu-parent > a, .menu-secondary .current_page_parent > a{
+		--tw-text-opacity: 1;
+		color: rgba(239, 68, 68, var(--tw-text-opacity));
+	}
+
+    .menu-primary .current-menu-item > a::before, .menu-primary .current-menu-parent > a::before, .menu-primary .current_page_parent > a::before, .menu-secondary .current-menu-item > a::before, .menu-secondary .current-menu-parent > a::before, .menu-secondary .current_page_parent > a::before{
+		content: "";
+		position: absolute;
+	}
+
+    .menu-primary .current-menu-item > a::before, .menu-primary .current-menu-parent > a::before, .menu-primary .current_page_parent > a::before, .menu-secondary .current-menu-item > a::before, .menu-secondary .current-menu-parent > a::before, .menu-secondary .current_page_parent > a::before{
+		content: "";
+		top: 0px;
+	}
+
+    .menu-primary .current-menu-item > a::before, .menu-primary .current-menu-parent > a::before, .menu-primary .current_page_parent > a::before, .menu-secondary .current-menu-item > a::before, .menu-secondary .current-menu-parent > a::before, .menu-secondary .current_page_parent > a::before{
+		content: "";
+		left: 0px;
+	}
+
+    .menu-primary .current-menu-item > a::before, .menu-primary .current-menu-parent > a::before, .menu-primary .current_page_parent > a::before, .menu-secondary .current-menu-item > a::before, .menu-secondary .current-menu-parent > a::before, .menu-secondary .current_page_parent > a::before{
+		content: "";
+		height: 0.25rem;
+	}
+
+    .menu-primary .current-menu-item > a::before, .menu-primary .current-menu-parent > a::before, .menu-primary .current_page_parent > a::before, .menu-secondary .current-menu-item > a::before, .menu-secondary .current-menu-parent > a::before, .menu-secondary .current_page_parent > a::before{
+		content: "";
+		width: 100%;
+	}
+
+    .menu-primary .current-menu-item > a::before, .menu-primary .current-menu-parent > a::before, .menu-primary .current_page_parent > a::before, .menu-secondary .current-menu-item > a::before, .menu-secondary .current-menu-parent > a::before, .menu-secondary .current_page_parent > a::before{
+		content: "";
+		--tw-bg-opacity: 1;
+		background-color: rgba(250, 83, 83, var(--tw-bg-opacity));
+	}
+
+  .sub-menu{
+		position: absolute;
+	}
+
+  .sub-menu{
+		top: 100%;
+	}
+
+  .sub-menu{
+		left: 50%;
+	}
+
+  .sub-menu{
+		z-index: 40;
+	}
+
+  .sub-menu{
+		display: none;
+	}
+
+  .sub-menu{
+		--tw-translate-x: -50%;
+		transform: var(--tw-transform);
+	}
+
+  .sub-menu{
+		transform: var(--tw-transform);
+	}
+
+  .sub-menu{
+		--tw-bg-opacity: 1;
+		background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+	}
+
+  .sub-menu{
+		opacity: 0;
+	}
+
+  .sub-menu{
+		--tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+		box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+	}
+
+    .sub-menu:focus-within{
+		visibility: visible;
+	}
+
+    .sub-menu:focus-within{
+		display: block;
+	}
+
+    .sub-menu:focus-within{
+		opacity: 1;
+	}
+
+    .sub-menu{
+
+    width: 250px;
+	}
+
+    .sub-menu:hover{
+		visibility: visible;
+	}
+
+    .sub-menu:hover{
+		display: block;
+	}
+
+    .sub-menu:hover{
+		opacity: 1;
+	}
+}/* ---------------------------------------------------
+  Default form styling now handled by Tailwind forms
+  https://github.com/tailwindlabs/tailwindcss-forms
+  Custom overrides below
+--------------------------------------------------- */form input[type="text"], form input[type="password"], form input[type="email"], form input[type="number"], form input[type="url"], form input[type="date"], form input[type="datetime-local"], form input[type="month"], form input[type="week"], form input[type="time"], form input[type="search"], form input[type="tel"], form input[type="checkbox"], form input[type="radio"], form select, form select[multiple], form textarea{
+	border-color: rgba(2, 31, 44, 0.5);
+}form input[type="text"], form input[type="password"], form input[type="email"], form input[type="number"], form input[type="url"], form input[type="date"], form input[type="datetime-local"], form input[type="month"], form input[type="week"], form input[type="time"], form input[type="search"], form input[type="tel"], form input[type="checkbox"], form input[type="radio"], form select, form select[multiple], form textarea{
+	padding: 1rem;
+}form textarea{
+	height: 8rem;
+}form input[type=submit]{
+	margin-left: auto;
+}form input[type=submit]{
+	cursor: pointer;
+}form input[type=submit]{
+	--tw-bg-opacity: 1;
+	background-color: rgba(250, 83, 83, var(--tw-bg-opacity));
+}form input[type=submit]{
+	padding: 1rem;
+}form input[type=submit]{
+	font-family: Source Serif Pro, serif;
+}form input[type=submit]{
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}form input[type=submit]{
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}form input[type=submit]{
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}form input[type=submit]{
+	transition-duration: 300ms;
+}form input[type=submit]:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(249, 50, 50, var(--tw-bg-opacity));
+}/* ---------------------------------------------------
+Mobile Nav
+--------------------------------------------------- *//* Important to set *//* Colours */.mob-nav{
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	height: 100%;
+	width: 80%;
+	transition-duration: 300ms;
+
+  -webkit-transform: translateX(101%);
+  transform: translateX(101%);
+  transition: 0.4s;
+
+  background: #021F2C;
+  display: block !important;
+  z-index: 99999999;
+}.mob-nav:before {
+    content: "Menu";
+  }.mob-nav:before{
+	display: block;
+}.mob-nav:before{
+	width: 100%;
+}.mob-nav:before{
+	padding: 1rem;
+}.mob-nav:before{
+	text-align: center;
+}.mob-nav:before {
+
+    border-bottom: 1px solid #01080c;
+    background: #093143;
+    color: #fff;
+  }.mob-nav--active{
+	--tw-translate-x: 0px;
+	transform: var(--tw-transform);
+}.mob-nav--active{
+	transform: var(--tw-transform);
+}.mob-nav--active {
+    box-shadow: -10px 0 30px rgba(#000, 0.2);
+  }.mob-nav li{
+	position: relative;
+}.mob-nav li{
+	float: left;
+}.mob-nav li{
+	width: 100%;
+}.mob-nav li{
+	list-style-type: none;
+}.mob-nav a{
+	position: relative;
+}.mob-nav a{
+	float: left;
+}.mob-nav a{
+	width: 100%;
+}.mob-nav a{
+	padding: 1rem;
+}.mob-nav a{
+	padding-left: 1.5rem;
+}.mob-nav a{
+	padding-right: 4rem;
+}.mob-nav a{
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}.mob-nav a{
+	text-decoration: none;
+}.mob-nav a {
+    color: #fff;
+    border-bottom: 1px solid #01080c;
+    background-color: transparent;
+  }.mob-nav a:hover{
+	text-decoration: none;
+}.mob-nav a > .icon{
+	display: none;
+}.mob-nav br {
+    display: none;
+  }/* Current page states */.mob-nav .current-menu-item > a,
+  .mob-nav .current-menu-parent > a,
+  .mob-nav .current-menu-ancestor > a {
+    color: #fff;
+    background-color: #BEA060;
+  }.mob-nav .current-menu-item > a + .sub-arrow, .mob-nav .current-menu-parent > a + .sub-arrow, .mob-nav .current-menu-ancestor > a + .sub-arrow {
+      color: #fff;
+    }.mob-nav .sub-arrow{
+	position: absolute;
+}.mob-nav .sub-arrow{
+	top: 0px;
+}.mob-nav .sub-arrow{
+	right: 0px;
+}.mob-nav .sub-arrow{
+	z-index: 10;
+}.mob-nav .sub-arrow{
+	cursor: pointer;
+}.mob-nav .sub-arrow{
+	padding-left: 0px;
+	padding-right: 0px;
+}.mob-nav .sub-arrow{
+	text-align: center;
+}.mob-nav .sub-arrow {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-left: 1px solid #01080c;
+    width: 45px;
+    color: #fff;
+    background-color: transparent;
+  }.mob-nav .sub-arrow .icon{
+	display: none;
+}.mob-nav .sub-arrow .icon.active{
+	display: inline-block;
+}/* active class is applied to parent link when submenu is activated */.mob-nav a.active {
+    background: #4b5563;
+    color: #fff;
+  }.mob-nav a.active + .sub-arrow {
+      border-color: #01080c;
+      color: #fff;
+    }.mob-nav .sub-menu{
+	float: left;
+}.mob-nav .sub-menu{
+	display: none;
+}.mob-nav .sub-menu{
+	width: 100%;
+}.mob-nav .sub-menu li{
+	padding-left: 1.5rem;
+}.mob-nav .scroll-container{
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	overflow-y: scroll;
+  top: 59px;
+  height: calc(100vh - 59px);
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 100px;
+}.mob-nav .scroll-container::-webkit-scrollbar{
+	display: none;
+}.mob-nav-close{
+	position: fixed;
+	left: 0px;
+	display: none;
+	height: 3rem;
+	width: 3rem;
+	--tw-translate-x: -100%;
+	transform: var(--tw-transform);
+	transform: var(--tw-transform);
+
+  background-color: #991b1b;
+  bottom: 40%;
+}.mob-nav-close .icon{
+	margin: auto;
+}.mob-nav-close .icon{
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+}.mob-nav-close .icon {
+    color: #fff;
+  }.mob-nav--active .mob-nav-close{
+	display: flex;
+}.mob-nav-underlay{
+	visibility: hidden;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 100%;
+	width: 100%;
+	--tw-bg-opacity: 1;
+	background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+	--tw-bg-opacity: 0.4;
+	opacity: 0;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+	transition-duration: 300ms;
+  display: block !important;
+  /* override critical css */
+  z-index: 999999;
+}.mob-nav-underlay.mob-nav--active{
+	visibility: visible;
+}.mob-nav-underlay.mob-nav--active{
+	opacity: 1;
+}/* ---------------------------------------------------
+Typography
+--------------------------------------------------- *//* Headings */h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+	margin-bottom: 1rem;
+	font-family: Source Serif Pro, serif;
+	font-weight: 600;
+	line-height: 1.375;
+}h1, .h1{
+	font-size: 30px;
+}@media (min-width: 1024px){h1, .h1{
+		font-size: 50px;
+	}
+}h2, .h2{
+	font-size: 25px;
+}@media (min-width: 1024px){h2, .h2{
+		font-size: 40px;
+	}
+}h3, .h3{
+	font-size: 20px;
+}@media (min-width: 1024px){h3, .h3{
+		font-size: 32px;
+	}
+}h4, .h4{
+	font-size: 20px;
+}@media (min-width: 1024px){h4, .h4{
+		font-size: 28px;
+	}
+}/* Copy */.copy > p{
+	margin-bottom: 1.5rem;
+}.copy > p{
+	line-height: 1.625;
+}.copy a{
+	display: inline-block;
+}.copy a{
+	--tw-text-opacity: 1;
+	color: rgba(190, 160, 96, var(--tw-text-opacity));
+}.copy a:hover{
+	text-decoration: underline;
+}.copy ol, .copy ul{
+	margin-bottom: 2rem;
+}.copy ol li,.copy ul li{
+	margin-bottom: 0.5rem;
+}.copy ol li,.copy ul li{
+	line-height: 1.625;
+}.copy ol li{
+	list-style-type: decimal;
+}.copy blockquote{
+	margin-bottom: 2rem;
+}.copy blockquote{
+	--tw-bg-opacity: 1;
+	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}.copy blockquote{
+	padding: 1rem;
+}@media (min-width: 768px) {
+    .copy img{
+		width: auto;
+	}
+
+    .copy .alignleft{
+		float: left;
+	}
+
+    .copy .alignleft{
+		margin-top: 0.25rem;
+	}
+
+    .copy .alignleft{
+		margin-bottom: 0.25rem;
+	}
+
+    .copy .alignleft{
+		margin-right: 0.25rem;
+	}
+
+    .copy .aligncenter{
+		float: none;
+	}
+
+    .copy .aligncenter{
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+    .copy .aligncenter{
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+    .copy .alignright{
+		float: right;
+	}
+
+    .copy .alignright{
+		margin-top: 0.25rem;
+	}
+
+    .copy .alignright{
+		margin-bottom: 0.25rem;
+	}
+
+    .copy .alignright{
+		margin-left: 0.25rem;
+	}
+}.sr-only{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}.fixed{
+	position: fixed;
+}.absolute{
+	position: absolute;
+}.relative{
+	position: relative;
+}.bottom-4{
+	bottom: 1rem;
+}.right-4{
+	right: 1rem;
+}.top-\[-28px\]{
+	top: -28px;
+}.left-4{
+	left: 1rem;
+}.top-0{
+	top: 0px;
+}.left-0{
+	left: 0px;
+}.right-0{
+	right: 0px;
+}.top-full{
+	top: 100%;
+}.z-10{
+	z-index: 10;
+}.z-50{
+	z-index: 50;
+}.order-2{
+	order: 2;
+}.order-\[-1\]{
+	order: -1;
+}.order-1{
+	order: 1;
+}.clear-both{
+	clear: both;
+}.m-2{
+	margin: 0.5rem;
+}.m-0{
+	margin: 0px;
+}.my-8{
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}.mx-auto{
+	margin-left: auto;
+	margin-right: auto;
+}.my-16{
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+}.my-4{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}.-mx-4{
+	margin-left: -1rem;
+	margin-right: -1rem;
+}.mx-4{
+	margin-left: 1rem;
+	margin-right: 1rem;
+}.mx-1{
+	margin-left: 0.25rem;
+	margin-right: 0.25rem;
+}.mb-4{
+	margin-bottom: 1rem;
+}.mt-4{
+	margin-top: 1rem;
+}.mt-16{
+	margin-top: 4rem;
+}.mt-8{
+	margin-top: 2rem;
+}.mb-0{
+	margin-bottom: 0px;
+}.mb-8{
+	margin-bottom: 2rem;
+}.mb-6{
+	margin-bottom: 1.5rem;
+}.mr-1{
+	margin-right: 0.25rem;
+}.-mb-20{
+	margin-bottom: -5rem;
+}.mr-8{
+	margin-right: 2rem;
+}.ml-2{
+	margin-left: 0.5rem;
+}.mt-3{
+	margin-top: 0.75rem;
+}.mr-4{
+	margin-right: 1rem;
+}.ml-auto{
+	margin-left: auto;
+}.mb-3{
+	margin-bottom: 0.75rem;
+}.mb-5{
+	margin-bottom: 1.25rem;
+}.block{
+	display: block;
+}.inline-block{
+	display: inline-block;
+}.flex{
+	display: flex;
+}.hidden{
+	display: none;
+}.h-full{
+	height: 100%;
+}.h-1{
+	height: 0.25rem;
+}.h-4{
+	height: 1rem;
+}.h-8{
+	height: 2rem;
+}.h-\[300px\]{
+	height: 300px;
+}.w-full{
+	width: 100%;
+}.w-1\/2{
+	width: 50%;
+}.w-1{
+	width: 0.25rem;
+}.w-4{
+	width: 1rem;
+}.w-1\/3{
+	width: 33.333333%;
+}.w-8{
+	width: 2rem;
+}.w-3\/4{
+	width: 75%;
+}.w-1\/4{
+	width: 25%;
+}.max-w-screen-lg{
+	max-width: 1024px;
+}.max-w-screen-xl{
+	max-width: 1280px;
+}.max-w-screen-3xl{
+	max-width: 1600px;
+}.max-w-72{
+	max-width: 18rem;
+}.max-w-screen-2xl{
+	max-width: 1400px;
+}.max-w-4xl{
+	max-width: 56rem;
+}.max-w-lg{
+	max-width: 32rem;
+}.flex-none{
+	flex: none;
+}.rotate-90{
+	--tw-rotate: 90deg;
+	transform: var(--tw-transform);
+}.transform{
+	transform: var(--tw-transform);
+}.resize{
+	resize: both;
+}.flex-col{
+	flex-direction: column;
+}.flex-wrap{
+	flex-wrap: wrap;
+}.items-start{
+	align-items: flex-start;
+}.items-center{
+	align-items: center;
+}.justify-end{
+	justify-content: flex-end;
+}.justify-center{
+	justify-content: center;
+}.justify-between{
+	justify-content: space-between;
+}.overflow-hidden{
+	overflow: hidden;
+}.overflow-x-auto{
+	overflow-x: auto;
+}.overflow-y-hidden{
+	overflow-y: hidden;
+}.rounded-full{
+	border-radius: 9999px;
+}.rounded-sm{
+	border-radius: 0.125rem;
+}.border-8{
+	border-width: 8px;
+}.border-0{
+	border-width: 0px;
+}.border-l-2{
+	border-left-width: 2px;
+}.border-b-8{
+	border-bottom-width: 8px;
+}.border-white{
+	--tw-border-opacity: 1;
+	border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+}.border-secondary{
+	--tw-border-opacity: 1;
+	border-color: rgba(190, 160, 96, var(--tw-border-opacity));
+}.border-l-white{
+	--tw-border-opacity: 1;
+	border-left-color: rgba(255, 255, 255, var(--tw-border-opacity));
+}.bg-gray-100{
+	--tw-bg-opacity: 1;
+	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}.bg-primary{
+	--tw-bg-opacity: 1;
+	background-color: rgba(2, 31, 44, var(--tw-bg-opacity));
+}.bg-white{
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}.bg-primary-light{
+	--tw-bg-opacity: 1;
+	background-color: rgba(9, 49, 67, var(--tw-bg-opacity));
+}.bg-tertiary{
+	--tw-bg-opacity: 1;
+	background-color: rgba(250, 83, 83, var(--tw-bg-opacity));
+}.bg-secondary{
+	--tw-bg-opacity: 1;
+	background-color: rgba(190, 160, 96, var(--tw-bg-opacity));
+}.bg-primary-dark{
+	--tw-bg-opacity: 1;
+	background-color: rgba(1, 8, 12, var(--tw-bg-opacity));
+}.bg-gray-100\/50{
+	background-color: rgba(243, 244, 246, 0.5);
+}.object-cover{
+	object-fit: cover;
+}.object-center{
+	object-position: center;
+}.object-top{
+	object-position: top;
+}.p-1{
+	padding: 0.25rem;
+}.p-4{
+	padding: 1rem;
+}.p-6{
+	padding: 1.5rem;
+}.p-8{
+	padding: 2rem;
+}.p-2{
+	padding: 0.5rem;
+}.p-0{
+	padding: 0px;
+}.p-5{
+	padding: 1.25rem;
+}.py-8{
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}.py-2{
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}.py-24{
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+}.px-6{
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}.py-3{
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+}.py-6{
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}.py-16{
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}.px-5{
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}.px-4{
+	padding-left: 1rem;
+	padding-right: 1rem;
+}.px-0{
+	padding-left: 0px;
+	padding-right: 0px;
+}.px-2{
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}.py-1{
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+}.pb-12{
+	padding-bottom: 3rem;
+}.pb-4{
+	padding-bottom: 1rem;
+}.pl-4{
+	padding-left: 1rem;
+}.pb-16{
+	padding-bottom: 4rem;
+}.pb-8{
+	padding-bottom: 2rem;
+}.pt-12{
+	padding-top: 3rem;
+}.pt-8{
+	padding-top: 2rem;
+}.pt-10{
+	padding-top: 2.5rem;
+}.text-left{
+	text-align: left;
+}.text-center{
+	text-align: center;
+}.font-serif{
+	font-family: Source Serif Pro, serif;
+}.font-sans{
+	font-family: Raleway, sans-serif;
+}.text-3xl{
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+}.text-lg{
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}.text-sm{
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}.font-semibold{
+	font-weight: 600;
+}.font-bold{
+	font-weight: 700;
+}.uppercase{
+	text-transform: uppercase;
+}.leading-tight{
+	line-height: 1.25;
+}.leading-loose{
+	line-height: 2;
+}.leading-snug{
+	line-height: 1.375;
+}.tracking-wider{
+	letter-spacing: 0.05em;
+}.text-white{
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}.text-primary{
+	--tw-text-opacity: 1;
+	color: rgba(2, 31, 44, var(--tw-text-opacity));
+}.text-secondary{
+	--tw-text-opacity: 1;
+	color: rgba(190, 160, 96, var(--tw-text-opacity));
+}.text-primary-lightest{
+	--tw-text-opacity: 1;
+	color: rgba(0, 88, 120, var(--tw-text-opacity));
+}.text-gray-500{
+	--tw-text-opacity: 1;
+	color: rgba(107, 114, 128, var(--tw-text-opacity));
+}.text-primary-dark{
+	--tw-text-opacity: 1;
+	color: rgba(1, 8, 12, var(--tw-text-opacity));
+}.text-gray-600{
+	--tw-text-opacity: 1;
+	color: rgba(75, 85, 99, var(--tw-text-opacity));
+}.text-primary-light{
+	--tw-text-opacity: 1;
+	color: rgba(9, 49, 67, var(--tw-text-opacity));
+}.text-tertiary{
+	--tw-text-opacity: 1;
+	color: rgba(250, 83, 83, var(--tw-text-opacity));
+}.no-underline{
+	text-decoration: none;
+}.opacity-50{
+	opacity: 0.5;
+}.opacity-0{
+	opacity: 0;
+}.opacity-20{
+	opacity: 0.2;
+}.opacity-25{
+	opacity: 0.25;
+}.shadow-lg{
+	--tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}.outline-none{
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+}.drop-shadow-2xl{
+	--tw-drop-shadow: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+	filter: var(--tw-filter);
+}.transition{
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}.transition-all{
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}.duration-300{
+	transition-duration: 300ms;
+}.duration-1000{
+	transition-duration: 1000ms;
+}.duration-200{
+	transition-duration: 200ms;
+}/* Custom CSS Here */.carousel-container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}.carousel-container::-webkit-scrollbar { /* WebKit */
+    display: none;
+}.dark-content li{
+	position: relative;
+}.dark-content li{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}.dark-content li{
+	padding-left: 1.5rem;
+}.dark-content li::before{
+	content: "";
+	position: absolute;
+}.dark-content li::before{
+	content: "";
+	top: 1.5rem;
+}.dark-content li::before{
+	content: "";
+	left: 0px;
+}.dark-content li::before{
+	content: "";
+	height: 0.5rem;
+}.dark-content li::before{
+	content: "";
+	width: 0.5rem;
+}.dark-content li::before{
+	content: "";
+	border-radius: 9999px;
+}.dark-content li::before{
+	content: "";
+	--tw-bg-opacity: 1;
+	background-color: rgba(250, 83, 83, var(--tw-bg-opacity));
+}.dark-content a{
+	--tw-text-opacity: 1;
+	color: rgba(190, 160, 96, var(--tw-text-opacity));
+}.hero + .dark-bg-content{
+	margin-top: 2.5rem;
+}.video-embed iframe{
+	height: 100%;
+	width: 100%;
+}.before\:absolute::before{
+	content: "";
+	position: absolute;
+}.before\:bottom-0::before{
+	content: "";
+	bottom: 0px;
+}.before\:left-0::before{
+	content: "";
+	left: 0px;
+}.before\:top-5::before{
+	content: "";
+	top: 1.25rem;
+}.before\:z-0::before{
+	content: "";
+	z-index: 0;
+}.before\:z-\[-1\]::before{
+	content: "";
+	z-index: -1;
+}.before\:h-\[90\%\]::before{
+	content: "";
+	height: 90%;
+}.before\:h-1::before{
+	content: "";
+	height: 0.25rem;
+}.before\:h-\[97\%\]::before{
+	content: "";
+	height: 97%;
+}.before\:h-full::before{
+	content: "";
+	height: 100%;
+}.before\:w-full::before{
+	content: "";
+	width: 100%;
+}.before\:w-1::before{
+	content: "";
+	width: 0.25rem;
+}.before\:rounded-full::before{
+	content: "";
+	border-radius: 9999px;
+}.before\:bg-primary::before{
+	content: "";
+	--tw-bg-opacity: 1;
+	background-color: rgba(2, 31, 44, var(--tw-bg-opacity));
+}.before\:bg-tertiary::before{
+	content: "";
+	--tw-bg-opacity: 1;
+	background-color: rgba(250, 83, 83, var(--tw-bg-opacity));
+}.after\:absolute::after{
+	content: "";
+	position: absolute;
+}.after\:bottom-\[-5px\]::after{
+	content: "";
+	bottom: -5px;
+}.after\:left-0::after{
+	content: "";
+	left: 0px;
+}.after\:bottom-\[-2px\]::after{
+	content: "";
+	bottom: -2px;
+}.after\:bottom-0::after{
+	content: "";
+	bottom: 0px;
+}.after\:top-1\/2::after{
+	content: "";
+	top: 50%;
+}.after\:bottom-\[-8px\]::after{
+	content: "";
+	bottom: -8px;
+}.after\:top-0::after{
+	content: "";
+	top: 0px;
+}.after\:left-1\/2::after{
+	content: "";
+	left: 50%;
+}.after\:bottom-\[-4px\]::after{
+	content: "";
+	bottom: -4px;
+}.after\:h-\[1px\]::after{
+	content: "";
+	height: 1px;
+}.after\:h-\[2px\]::after{
+	content: "";
+	height: 2px;
+}.after\:w-0::after{
+	content: "";
+	width: 0px;
+}.after\:w-full::after{
+	content: "";
+	width: 100%;
+}.after\:w-\[30px\]::after{
+	content: "";
+	width: 30px;
+}.after\:w-1\/6::after{
+	content: "";
+	width: 16.666667%;
+}.after\:-translate-x-1\/2::after{
+	content: "";
+	--tw-translate-x: -50%;
+	transform: var(--tw-transform);
+}.after\:bg-secondary::after{
+	content: "";
+	--tw-bg-opacity: 1;
+	background-color: rgba(190, 160, 96, var(--tw-bg-opacity));
+}.after\:bg-tertiary::after{
+	content: "";
+	--tw-bg-opacity: 1;
+	background-color: rgba(250, 83, 83, var(--tw-bg-opacity));
+}.after\:bg-gray-200::after{
+	content: "";
+	--tw-bg-opacity: 1;
+	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+}.after\:bg-primary-lightest::after{
+	content: "";
+	--tw-bg-opacity: 1;
+	background-color: rgba(0, 88, 120, var(--tw-bg-opacity));
+}.after\:bg-white::after{
+	content: "";
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}.after\:transition-all::after{
+	content: "";
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}.after\:duration-300::after{
+	content: "";
+	transition-duration: 300ms;
+}.hover\:scale-110:hover{
+	--tw-scale-x: 1.1;
+	--tw-scale-y: 1.1;
+	transform: var(--tw-transform);
+}.hover\:transform:hover{
+	transform: var(--tw-transform);
+}.hover\:bg-white:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}.hover\:bg-gray-100:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}.hover\:bg-gray-300:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
+}.hover\:text-secondary:hover{
+	--tw-text-opacity: 1;
+	color: rgba(190, 160, 96, var(--tw-text-opacity));
+}.hover\:text-black:hover{
+	--tw-text-opacity: 1;
+	color: rgba(0, 0, 0, var(--tw-text-opacity));
+}.hover\:opacity-50:hover{
+	opacity: 0.5;
+}.hover\:after\:w-full:hover::after{
+	content: "";
+	width: 100%;
+}.focus\:text-black:focus{
+	--tw-text-opacity: 1;
+	color: rgba(0, 0, 0, var(--tw-text-opacity));
+}@media (min-width: 600px){.sm\:w-1\/2{
+		width: 50%;
+	}.sm\:p-8{
+		padding: 2rem;
+	}
+}@media (min-width: 768px){.md\:order-1{
+		order: 1;
+	}.md\:order-2{
+		order: 2;
+	}.md\:-mx-5{
+		margin-left: -1.25rem;
+		margin-right: -1.25rem;
+	}.md\:mb-0{
+		margin-bottom: 0px;
+	}.md\:inline-block{
+		display: inline-block;
+	}.md\:flex{
+		display: flex;
+	}.md\:w-1\/2{
+		width: 50%;
+	}.md\:w-1\/4{
+		width: 25%;
+	}.md\:w-3\/4{
+		width: 75%;
+	}.md\:w-1\/3{
+		width: 33.333333%;
+	}.md\:w-7\/12{
+		width: 58.333333%;
+	}.md\:p-12{
+		padding: 3rem;
+	}.md\:p-8{
+		padding: 2rem;
+	}.md\:p-10{
+		padding: 2.5rem;
+	}.md\:py-10{
+		padding-top: 2.5rem;
+		padding-bottom: 2.5rem;
+	}.md\:py-16{
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}.md\:px-8{
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}.md\:py-24{
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+	}.md\:text-left{
+		text-align: left;
+	}.md\:before\:h-\[92\%\]::before{
+		content: "";
+		height: 92%;
+	}
+}@media (min-width: 1024px){.lg\:absolute{
+		position: absolute;
+	}.lg\:relative{
+		position: relative;
+	}.lg\:sticky{
+		position: sticky;
+	}.lg\:top-4{
+		top: 1rem;
+	}.lg\:order-3{
+		order: 3;
+	}.lg\:m-0{
+		margin: 0px;
+	}.lg\:my-16{
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+	}.lg\:mx-0{
+		margin-left: 0px;
+		margin-right: 0px;
+	}.lg\:mt-0{
+		margin-top: 0px;
+	}.lg\:mb-8{
+		margin-bottom: 2rem;
+	}.lg\:mt-8{
+		margin-top: 2rem;
+	}.lg\:mt-16{
+		margin-top: 4rem;
+	}.lg\:mt-\[-5px\]{
+		margin-top: -5px;
+	}.lg\:-mr-12{
+		margin-right: -3rem;
+	}.lg\:block{
+		display: block;
+	}.lg\:inline-block{
+		display: inline-block;
+	}.lg\:flex{
+		display: flex;
+	}.lg\:hidden{
+		display: none;
+	}.lg\:h-auto{
+		height: auto;
+	}.lg\:h-\[600px\]{
+		height: 600px;
+	}.lg\:w-2\/3{
+		width: 66.666667%;
+	}.lg\:w-1\/2{
+		width: 50%;
+	}.lg\:w-1\/3{
+		width: 33.333333%;
+	}.lg\:w-5\/12{
+		width: 41.666667%;
+	}.lg\:w-7\/12{
+		width: 58.333333%;
+	}.lg\:w-3\/5{
+		width: 60%;
+	}.lg\:w-4\/5{
+		width: 80%;
+	}.lg\:w-2\/5{
+		width: 40%;
+	}.lg\:w-full{
+		width: 100%;
+	}.lg\:w-3\/12{
+		width: 25%;
+	}.lg\:w-9\/12{
+		width: 75%;
+	}.lg\:w-\[270px\]{
+		width: 270px;
+	}.lg\:w-1\/5{
+		width: 20%;
+	}.lg\:flex-row{
+		flex-direction: row;
+	}.lg\:flex-wrap{
+		flex-wrap: wrap;
+	}.lg\:justify-end{
+		justify-content: flex-end;
+	}.lg\:space-x-12 > :not([hidden]) ~ :not([hidden]){
+		--tw-space-x-reverse: 0;
+		margin-right: calc(3rem * var(--tw-space-x-reverse));
+		margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
+	}.lg\:object-center{
+		object-position: center;
+	}.lg\:p-8{
+		padding: 2rem;
+	}.lg\:p-0{
+		padding: 0px;
+	}.lg\:p-4{
+		padding: 1rem;
+	}.lg\:py-16{
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}.lg\:px-0{
+		padding-left: 0px;
+		padding-right: 0px;
+	}.lg\:px-6{
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}.lg\:pb-16{
+		padding-bottom: 4rem;
+	}.lg\:pt-0{
+		padding-top: 0px;
+	}.lg\:text-left{
+		text-align: left;
+	}.lg\:text-sm{
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}.lg\:opacity-100{
+		opacity: 1;
+	}.lg\:after\:left-0::after{
+		content: "";
+		left: 0px;
+	}.lg\:after\:translate-x-0::after{
+		content: "";
+		--tw-translate-x: 0px;
+		transform: var(--tw-transform);
+	}
+}@media (min-width: 1280px){.xl\:top-\[-35px\]{
+		top: -35px;
+	}.xl\:mt-\[-15px\]{
+		margin-top: -15px;
+	}.xl\:w-3\/4{
+		width: 75%;
+	}.xl\:w-1\/4{
+		width: 25%;
+	}.xl\:w-\[350px\]{
+		width: 350px;
+	}.xl\:p-8{
+		padding: 2rem;
+	}.xl\:p-24{
+		padding: 6rem;
+	}.xl\:p-4{
+		padding: 1rem;
+	}.xl\:py-10{
+		padding-top: 2.5rem;
+		padding-bottom: 2.5rem;
+	}.xl\:pb-16{
+		padding-bottom: 4rem;
+	}.xl\:pt-8{
+		padding-top: 2rem;
+	}.xl\:text-base{
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+}@media (min-width: 1400px){.\32xl\:top-\[-48px\]{
+		top: -48px;
+	}.\32xl\:order-1{
+		order: 1;
+	}.\32xl\:order-2{
+		order: 2;
+	}.\32xl\:-mx-8{
+		margin-left: -2rem;
+		margin-right: -2rem;
+	}.\32xl\:mb-16{
+		margin-bottom: 4rem;
+	}.\32xl\:mt-6{
+		margin-top: 1.5rem;
+	}.\32xl\:block{
+		display: block;
+	}.\32xl\:w-\[477px\]{
+		width: 477px;
+	}.\32xl\:w-1\/3{
+		width: 33.333333%;
+	}.\32xl\:p-16{
+		padding: 4rem;
+	}.\32xl\:py-12{
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}.\32xl\:px-12{
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}.\32xl\:pb-24{
+		padding-bottom: 6rem;
+	}.\32xl\:pt-10{
+		padding-top: 2.5rem;
+	}.\32xl\:text-xl{
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+	}
+}@media (min-width: 1600px){.\33xl\:p-24{
+		padding: 6rem;
+	}.\33xl\:px-6{
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+}
+				</style>
+		
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-218863947-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-218863947-1', { 'anonymize_ip': true });
+</script>
+  
+      <script type="application/ld+json">
+ 
+// Business name, address, opening hours, logo social profiles
+ 
+{
+ "@context" : "https://schema.org",
+ "@type": "LocalBusiness",
+ 
+"name" : "Eye Guide MC",
+ 
+"logo" : "https://eyeguidemc.co.uk/wp-content/uploads/2021/12/logo-dark.png",
+ 
+"image" : "https://eyeguidemc.co.uk/wp-content/uploads/2022/01/2021_0518_112229-scaled.jpg",
+ 
+"url": "https://www.eyeguidemc.co.uk/",
+ 
+"address": {
+ "@type": "PostalAddress",
+ "streetAddress": "39-41 Market Place",
+ "addressLocality": "Long Sutton",
+ "addressRegion": "Spalding",
+ "postalCode": "PE12 9JA"
+ },
+ 
+"telephone": "01406 362 028",
+ 
+"openingHours":
+ [
+ "Mo-Fr 08:30-16:30"
+ ],
+ 
+"email" :"info@eyeguidemc.co.uk",
+
+ 
+"sameAs" :
+ [ "https://www.facebook.com/Eye-Guide-MC-101983491973931/"
+
+ ],
+ 
+"description": "Eye Guide MC is a new Parkinson's aid that improves your balance, walking & tremor. Based in Long Sutton, Lincolnshire. Get in touch today."
+},
+
+"areaServed": [
+{
+"@type": "City",
+"name": "Long Sutton",
+"@id": "https://en.wikipedia.org/wiki/Long_Sutton,_Lincolnshire"
+},
+{
+"@type": "City",
+"name": "Lincolnshire",
+"@id": "https://en.wikipedia.org/wiki/Lincolnshire"
+}
+]
+}
+</script>
+ 
+<script type="application/ld+json">
+ 
+// Colloquial site name - for mobile SERPs
+ {
+ "@context" : "https://schema.org",
+ "@type" : "WebSite",
+ "name" : "Eye Guide MC",
+ "url" : "https://www.eyeguidemc.co.uk/"
+ }
+ 
+</script>
+  
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v18.0 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Parkinson&#039;s Aid for Symptoms | Long Sutton &amp; Lincolnshire | Eye Guide MC</title>
+	<meta name="description" content="Eye Guide MC is a new Parkinson&#039;s aid that improves your balance, walking &amp; tremor. Based in Long Sutton, Lincolnshire. Get in touch today." />
+	<link rel="canonical" href="http://eye-guide.vm/" />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Parkinson&#039;s Aid for Symptoms | Long Sutton &amp; Lincolnshire | Eye Guide MC" />
+	<meta property="og:description" content="Eye Guide MC is a new Parkinson&#039;s aid that improves your balance, walking &amp; tremor. Based in Long Sutton, Lincolnshire. Get in touch today." />
+	<meta property="og:url" content="http://eye-guide.vm/" />
+	<meta property="og:site_name" content="Eye Guide MC" />
+	<meta property="article:modified_time" content="2022-01-28T16:09:11+00:00" />
+	<meta property="og:image" content="http://eye-guide.vm/wp-content/uploads/2022/01/2021_0518_112229-scaled.jpg" />
+	<meta property="og:image:width" content="2560" />
+	<meta property="og:image:height" content="1751" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://eye-guide.vm/#organization","name":"Eye Guide MC","url":"http://eye-guide.vm/","sameAs":[],"logo":{"@type":"ImageObject","@id":"http://eye-guide.vm/#logo","inLanguage":"en-GB","url":"http://eye-guide.vm/wp-content/uploads/2021/12/logo-dark.png","contentUrl":"http://eye-guide.vm/wp-content/uploads/2021/12/logo-dark.png","width":477,"height":158,"caption":"Eye Guide MC"},"image":{"@id":"http://eye-guide.vm/#logo"}},{"@type":"WebSite","@id":"http://eye-guide.vm/#website","url":"http://eye-guide.vm/","name":"Eye Guide MC","description":"Just another WordPress site","publisher":{"@id":"http://eye-guide.vm/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"http://eye-guide.vm/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-GB"},{"@type":"ImageObject","@id":"http://eye-guide.vm/#primaryimage","inLanguage":"en-GB","url":"http://eye-guide.vm/wp-content/uploads/2022/01/2021_0518_112229-scaled.jpg","contentUrl":"http://eye-guide.vm/wp-content/uploads/2022/01/2021_0518_112229-scaled.jpg","width":2560,"height":1751,"caption":"Parkinson's aid - the team at Eye Guide MC"},{"@type":"WebPage","@id":"http://eye-guide.vm/#webpage","url":"http://eye-guide.vm/","name":"Parkinson's Aid for Symptoms | Long Sutton & Lincolnshire | Eye Guide MC","isPartOf":{"@id":"http://eye-guide.vm/#website"},"about":{"@id":"http://eye-guide.vm/#organization"},"primaryImageOfPage":{"@id":"http://eye-guide.vm/#primaryimage"},"datePublished":"2021-12-29T13:58:09+00:00","dateModified":"2022-01-28T16:09:11+00:00","description":"Eye Guide MC is a new Parkinson's aid that improves your balance, walking & tremor. Based in Long Sutton, Lincolnshire. Get in touch today.","breadcrumb":{"@id":"http://eye-guide.vm/#breadcrumb"},"inLanguage":"en-GB","potentialAction":[{"@type":"ReadAction","target":["http://eye-guide.vm/"]}]},{"@type":"BreadcrumbList","@id":"http://eye-guide.vm/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel="icon" href="http://eye-guide.vm/wp-content/uploads/2022/01/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="http://eye-guide.vm/wp-content/uploads/2022/01/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="http://eye-guide.vm/wp-content/uploads/2022/01/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="http://eye-guide.vm/wp-content/uploads/2022/01/cropped-favicon-270x270.png" />
+
+</head>
+
+<body>
+
+
+
+
+  <nav class="mob-nav">
+    <div class="scroll-container">
+      <ul class="">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-21 current-menu-item">
+            <a href="http://eye-guide.vm/">Home</a>
+                      </li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24 ">
+            <a href="http://eye-guide.vm/about-us/">About Us</a>
+                      </li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 ">
+            <a href="http://eye-guide.vm/about-the-eye-guide-mc/">About The Eye Guide MC</a>
+                      </li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26 ">
+            <a href="http://eye-guide.vm/meet-the-team/">Meet The Team</a>
+                      </li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27 ">
+            <a href="http://eye-guide.vm/testimonials/">Testimonials</a>
+                      </li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22 ">
+            <a href="http://eye-guide.vm/news/">News</a>
+                      </li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25 ">
+            <a href="http://eye-guide.vm/contact/">Contact</a>
+                      </li>
+              </ul>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+
+      <div class="fixed z-50 flex flex-wrap w-full bg-primary lg:hidden">
+
+<a href="tel:01406 362 028" class="font-semibold text-white w-1/2 p-2 inline-block bg-secondary text-center">
+    
+        <svg class="icon icon-phone transform rotate-90 mr-1"><use href="http://eye-guide.vm/wp-content/themes/eye-guide-mc/_resources/images/icons-sprite.svg#icon-phone"></use></svg>
+    
+        01406 362 028
+</a>
+<button title="Toggle Mobile Menu" class="flex items-center justify-center w-1/2 p-2 font-semibold text-center text-white bg-primary" data-mobile-menu-toggle>
+  <svg class="icon icon-bars "><use href="http://eye-guide.vm/wp-content/themes/eye-guide-mc/_resources/images/icons-sprite.svg#icon-bars"></use></svg>
+  <span class="ml-2">Menu</span>
+</button>
+
+</div>
+
+      <header class="pt-10 lg:pt-0">
+
+	<div class="relative hidden text-white bg-primary top-bar lg:block">
+	
+		<div class="container flex items-center justify-end py-3">
+			
+						<p class="mr-8"><svg class="icon icon-clock text-secondary mr-1"><use href="http://eye-guide.vm/wp-content/themes/eye-guide-mc/_resources/images/icons-sprite.svg#icon-clock"></use></svg> Open today 8.30am - 4.30pm</p>
+	
+			<a href="tel:01406 362 028" class="font-semibold">
+    
+        <svg class="icon icon-phone transform rotate-90 mr-1"><use href="http://eye-guide.vm/wp-content/themes/eye-guide-mc/_resources/images/icons-sprite.svg#icon-phone"></use></svg>
+    
+        01406 362 028
+</a>	
+		</div>
+	
+	</div>
+
+	<div class="bg-gray-100/50">
+
+		<div class="container justify-end lg:flex lg:relative ">
+
+			<a aria-label="Go to homepage" class="lg:absolute z-10 top-[-28px] xl:top-[-35px] 2xl:top-[-48px] left-4 block py-2 lg:inline-block lg:w-[270px] xl:w-[350px] 2xl:w-[477px]" href="http://eye-guide.vm">
+				<img width="477" height="158" class="mx-auto" src="http://eye-guide.vm/wp-content/uploads/2021/12/logo-dark.webp" alt="Eye Guide MC Logo"/>
+			</a>
+
+			<nav id="menu-primary" class="hidden font-semibold transition duration-200 lg:block menu" aria-labelledby="primary-navigation">
+				<span class="sr-only" id="primary-navigation">Primary Navigation</span>
+				<ul class="flex flex-wrap justify-center w-full menu-primary">
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-21">
+						<a href="http://eye-guide.vm/"
+							class="relative block p-2 py-6 text-sm border-l-2 border-l-white hover:bg-white xl:p-4 3xl:px-6 xl:py-10 xl:pt-8 2xl:pt-10 2xl:py-12 xl:text-base hover:text-black focus:text-black">Home</a>
+											</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24">
+						<a href="http://eye-guide.vm/about-us/"
+							class="relative block p-2 py-6 text-sm border-l-2 border-l-white hover:bg-white xl:p-4 3xl:px-6 xl:py-10 xl:pt-8 2xl:pt-10 2xl:py-12 xl:text-base hover:text-black focus:text-black">About Us</a>
+											</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23">
+						<a href="http://eye-guide.vm/about-the-eye-guide-mc/"
+							class="relative block p-2 py-6 text-sm border-l-2 border-l-white hover:bg-white xl:p-4 3xl:px-6 xl:py-10 xl:pt-8 2xl:pt-10 2xl:py-12 xl:text-base hover:text-black focus:text-black">About The Eye Guide MC</a>
+											</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26">
+						<a href="http://eye-guide.vm/meet-the-team/"
+							class="relative block p-2 py-6 text-sm border-l-2 border-l-white hover:bg-white xl:p-4 3xl:px-6 xl:py-10 xl:pt-8 2xl:pt-10 2xl:py-12 xl:text-base hover:text-black focus:text-black">Meet The Team</a>
+											</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27">
+						<a href="http://eye-guide.vm/testimonials/"
+							class="relative block p-2 py-6 text-sm border-l-2 border-l-white hover:bg-white xl:p-4 3xl:px-6 xl:py-10 xl:pt-8 2xl:pt-10 2xl:py-12 xl:text-base hover:text-black focus:text-black">Testimonials</a>
+											</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22">
+						<a href="http://eye-guide.vm/news/"
+							class="relative block p-2 py-6 text-sm border-l-2 border-l-white hover:bg-white xl:p-4 3xl:px-6 xl:py-10 xl:pt-8 2xl:pt-10 2xl:py-12 xl:text-base hover:text-black focus:text-black">News</a>
+											</li>
+										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25">
+						<a href="http://eye-guide.vm/contact/"
+							class="relative block p-2 py-6 text-sm border-l-2 border-l-white hover:bg-white xl:p-4 3xl:px-6 xl:py-10 xl:pt-8 2xl:pt-10 2xl:py-12 xl:text-base hover:text-black focus:text-black">Contact</a>
+											</li>
+									</ul>
+			</nav>
+
+		</div>
+
+	</div>
+
+</header>
+  
+  	<div class="relative bg-primary lg:mt-[-5px] xl:mt-[-15px] text-white flex flex-wrap text-center hero overflow-hidden">
+
+  <div class="absolute w-full h-full lg:h-auto z-1 opacity-20 lg:opacity-100 lg:relative lg:block lg:w-1/2 2xl:w-1/3 bg-primary-light">
+    <img width="725" height="525" class="object-cover object-top w-full h-full lg:object-center" src="http://eye-guide.vm/wp-content/uploads/2022/01/2021_0518_112229-768x525.webp" alt="Eye Guide MC">
+  </div>
+
+  <div
+    class="relative z-10 w-full lg:w-1/2 p-4 py-16 2xl:w-1/3 2xl:px-12 3xl:p-24 order-[-1] 2xl:order-1 flex flex-col justify-center">
+
+    <p class="h1">Helping people with Parkinson's reclaim independence</p>
+
+          <p class="my-8 font-semibold">The Eye Guide MC is a new device invented by a person with Parkinson's, for people with Parkinson's</p>
+    
+          <a href="http://eye-guide.vm/contact/" class="mx-auto btn btn--secondary">Contact us today</a>
+    
+  </div>
+
+  <div class="hidden w-1/3 2xl:order-2 2xl:block bg-primary-light">
+    <img width="725" height="525" class="object-cover object-center w-full h-full" src="http://eye-guide.vm/wp-content/uploads/2022/01/Sandra-Mcdonough-inventor-of-Eye-Guide-MC-768x512.webp" alt="Eye Guide MC">
+  </div>
+
+</div>
+  
+	
+		
+			<div class="container py-24 text-center max-w-screen-2xl">
+
+    <div class="relative after:absolute after:top-1/2 after:left-0 after:w-full after:h-[1px] after:bg-gray-200 mb-8">
+        <h1 class="relative z-10 inline-block px-6 mx-auto mb-0 bg-white">Introducing the Eye Guide MC</h1>
+    </div>
+
+    <div class="max-w-4xl mx-auto copy">
+
+        <p>The <a href="http://eye-guide.vm/about-the-eye-guide-mc/">Eye Guide MC</a> is a new device invented by a person with Parkinson&#8217;s, for people with Parkinson&#8217;s. It is a simple, wearable aid that can drastically improve the quality of life of a person with Parkinson&#8217;s Disease.</p>
+<p>The device sits discreetly over the wearer&#8217;s ear, lining up to their visual field. It provides a visual sensory stimulus which can help to improve a person with Parkinson&#8217;s balance, walking and tremor.</p>
+
+
+    </div>
+
+            <a href="http://eye-guide.vm/about-the-eye-guide-mc/" class="mt-8 btn btn--tertiary">About The Eye Guide MC</a>
+    
+</div>
+		
+		
+	
+		
+		
+			<div class="relative before:absolute before:bottom-0 before:left-0 before:w-full before:h-[97%] p-4 lg:p-0 md:before:h-[92%] before:z-[-1] before:bg-primary dark-bg-content">
+
+    
+        <div class="container flex flex-wrap p-0 max-w-screen-3xl">
+
+            
+                <div class="w-full p-2 sm:w-1/2 md:w-1/4 lg:p-4">
+                    <div class="w-full h-full p-4 bg-white drop-shadow-2xl lg:p-8">
+                        <p class="mb-0 h4">No surgery</p>
+                        <p>No surgery required - just a simple fitting by our experts</p>
+                    </div>
+                </div>
+
+            
+                <div class="w-full p-2 sm:w-1/2 md:w-1/4 lg:p-4">
+                    <div class="w-full h-full p-4 bg-white drop-shadow-2xl lg:p-8">
+                        <p class="mb-0 h4">No wires</p>
+                        <p>The device is wireless and discreet</p>
+                    </div>
+                </div>
+
+            
+                <div class="w-full p-2 sm:w-1/2 md:w-1/4 lg:p-4">
+                    <div class="w-full h-full p-4 bg-white drop-shadow-2xl lg:p-8">
+                        <p class="mb-0 h4">No batteries</p>
+                        <p>The device doesn’t require charging or batteries</p>
+                    </div>
+                </div>
+
+            
+                <div class="w-full p-2 sm:w-1/2 md:w-1/4 lg:p-4">
+                    <div class="w-full h-full p-4 bg-white drop-shadow-2xl lg:p-8">
+                        <p class="mb-0 h4">Just simple...</p>
+                        <p>The design is simple, effective, unobtrusive and subtle</p>
+                    </div>
+                </div>
+
+            
+        </div>
+
+    
+    <div class="container relative flex-wrap items-start p-8 text-white lg:py-16 z-1 max-w-screen-3xl lg:flex">
+
+        <div class="lg:w-3/5 xl:w-3/4">
+
+            <div class="lg:w-4/5">
+
+                <h2
+                    class="inline-block relative after:absolute after:bg-tertiary after:w-full after:h-[2px] after:bottom-[-8px] after:left-0 mb-8">
+                    How it works</h2>
+
+                <div class="mb-8 dark-content copy">
+
+                    <ul>
+<li><a href="http://eye-guide.vm/about-the-eye-guide-mc/">The Eye Guide MC</a> is a simple device that can instantly improve the debilitating symptoms of Parkinson&#8217;s Disease (speech, tremor, movement, coordination).</li>
+<li><a href="http://eye-guide.vm/about-the-eye-guide-mc/">The Eye Guide MC</a> is worn over the ear, pointing out along the eye line and sites along the meridian line.</li>
+<li>The Guide sits in the peripheral vision, so that the eye only sees the very tip of it.</li>
+<li>This enables the brain to work with the eye, giving new signals to the Basal Ganglia, the part of the brain that controls movement.</li>
+</ul>
+
+
+                </div>
+
+            </div>
+
+            <div class="mx-auto text-center lg:text-left lg:m-0">
+
+                <a href="tel:01406 362 028" class="btn btn--outline-secondary">
+    
+             Call us on
+        01406 362 028
+</a>
+                <span class="block p-2 font-semibold md:inline-block">or</span>
+
+                <a class="btn btn--secondary" href="http://eye-guide.vm/contact">Book a free consultation</a>
+
+            </div>
+
+        </div>
+
+        
+        <div class="flex flex-wrap mt-8 -mx-4 lg:mt-0 lg:mx-0 lg:w-2/5 xl:w-1/4 lg:sticky lg:top-4">
+
+            
+            <div class="w-1/2 p-4 lg:w-full lg:mb-8">
+
+                <a class="block overflow-hidden" data-fslightbox href="http://eye-guide.vm/wp-content/uploads/2022/01/sandra-1.webp">
+                    <img width="352" height="192" class="object-cover object-center w-full transition duration-300 lazyload hover:transform hover:scale-110" src="" data-src="http://eye-guide.vm/wp-content/uploads/2022/01/sandra-1.png" alt="Eye Guide MC">
+                </a>
+
+            </div>
+
+            
+            <div class="w-1/2 p-4 lg:w-full lg:mb-8">
+
+                <a class="block overflow-hidden" data-fslightbox href="http://eye-guide.vm/wp-content/uploads/2022/01/sandra-2.webp">
+                    <img width="352" height="192" class="object-cover object-center w-full transition duration-300 lazyload hover:transform hover:scale-110" src="" data-src="http://eye-guide.vm/wp-content/uploads/2022/01/sandra-2.png" alt="Eye Guide MC">
+                </a>
+
+            </div>
+
+            
+        </div>
+
+        
+    </div>
+
+            <div class="flex flex-wrap pb-16 mx-auto lg:mt-8 max-w-screen-3xl">
+
+            
+                <div class="w-full p-4 sm:w-1/2">
+
+                    <div class="h-full p-8 text-white bg-primary-light copy">
+
+                        <h3
+                            class="relative mb-6 inline-block after:absolute after:left-0 after:bottom-[-5px] after:h-[1px] after:w-full after:bg-primary-lightest">
+                            Driven to help people with Parkinson’s</h3>
+
+                        <p>Eye Guide MC was created by a person with Parkinson’s, for people with Parkinson’s. Every Parkinson’s person is welcome to talk to us about a fitting.</p>
+<p>The device was born out of a very personal Parkinson’s journey. Sandra, the inventor of Eye Guide MC, is in a unique position to understand the needs of people with Parkinson’s and her mission is to improve the lives of those with the condition. She persevered to create a device that will change lives for the better.</p>
+
+                    </div>
+                </div>
+
+            
+                <div class="w-full p-4 sm:w-1/2">
+
+                    <div class="h-full p-8 text-white bg-primary-light copy">
+
+                        <h3
+                            class="relative mb-6 inline-block after:absolute after:left-0 after:bottom-[-5px] after:h-[1px] after:w-full after:bg-primary-lightest">
+                            Patients first</h3>
+
+                        <p>Here at Eye Guide MC, patient care is our top priority. We&#8217;re here to guide you through the full process of living with your new Eye Guide MC, from an initial consultation, to the fitting, to follow up advice. All of our highly trained team of technicians come from caring backgrounds and are trained by a Parkinson&#8217;s Nurse Specialist.</p>
+<p>Our friendly staff will greet you at the door of our clinic and will be with you all the way to reclaiming your independence.</p>
+
+                    </div>
+                </div>
+
+            
+        </div>
+    
+        
+
+</div>
+		
+		
+
+	<div class="overflow-hidden ">
+
+    <div class="container py-16 max-w-screen-3xl md:py-24">
+
+        <div class="flex flex-wrap items-center justify-center">
+
+            <div class="z-10 order-2 w-full md:w-1/3 md:order-1 lg:-mr-12">
+
+                <div class="p-8 text-white copy bg-primary">
+
+                    <span class="block tracking-wider uppercase text-tertiary">Watch now</span>
+
+                    <h3>About me</h3>
+
+
+                    <p>Hello! I’m Sandra McDonough, the inventor, founder and Director of the Eye Guide MC. I was diagnosed with Parkinson’s on the eve of my 40th birthday and my symptoms rapidly worsened.</p>
+                    
+                </div>
+
+            </div>
+
+            <div class="order-1 w-full mb-4 md:w-7/12 md:order-2 md:mb-0">
+
+                
+                    <video controls preload="none" class="w-full mb-5 md:mb-0" poster="http://eye-guide.vm/wp-content/uploads/2022/01/video-poster-768x531.png">
+
+                        <source src="http://eye-guide.vm/wp-content/uploads/2022/01/EG_SocialC1V2.mp4" type="video/mp4">
+
+                        Sorry, your browser doesn't support embedded videos.
+
+                    </video>
+
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+	<div class="p-4 bg-gray-100 lg:py-16">
+    
+    <div class="container flex flex-col lg:flex-row lg:flex-wrap">
+        
+        <div class="p-4 lg:w-5/12 md:p-8">
+            <h3 class="inline-block relative after:absolute after:bg-tertiary after:w-full after:h-[2px] after:bottom-0 after:left-0 mb-8">Acknowledgments</h3>
+            <p>We would like to thank the following for their help and generosity, without them our journey would have been much
+            different.</p>
+        </div>
+
+        <div class="flex-wrap p-4 bg-white lg:w-7/12 md:flex">
+
+            <div class="md:w-1/2 md:p-8">
+            
+                <img width="338" height="78" class="block object-cover object-center w-full lazyload max-w-72" src="" data-src="http://eye-guide.vm/wp-content/uploads/2021/12/lincoln-university.webp" alt="Acknowledgements logo">
+
+                <ul class="my-4">
+                                            <li class="py-2 font-semibold uppercase">Parkinsons UK</li>
+                                            <li class="py-2 font-semibold uppercase">Lincoln University</li>
+                                            <li class="py-2 font-semibold uppercase">Greenborough Management Ltd</li>
+                                            <li class="py-2 font-semibold uppercase">BSA Moundings Ltd</li>
+                                    </ul>
+
+            </div>
+
+            <div class="md:w-1/2 md:p-8">
+
+                <h4>Personal Acknowledgments</h4>
+
+                <ul>
+                                            <li class="relative py-2 pl-4 before:rounded-full before:absolute before:top-5 before:left-0 before:bg-tertiary before:w-1 before:h-1 ">Doctor Humberstone neurologist Grantham and Lincoln Hospital.</li>
+                                            <li class="relative py-2 pl-4 before:rounded-full before:absolute before:top-5 before:left-0 before:bg-tertiary before:w-1 before:h-1 ">Charli Whitaker Lincoln University for the help and advice.</li>
+                                            <li class="relative py-2 pl-4 before:rounded-full before:absolute before:top-5 before:left-0 before:bg-tertiary before:w-1 before:h-1 ">Paul Smith Greenborough for the amazing patience and advice given to us.</li>
+                                            <li class="relative py-2 pl-4 before:rounded-full before:absolute before:top-5 before:left-0 before:bg-tertiary before:w-1 before:h-1 ">Sue Giles and her family from BSA Mouldings who have become invaluable to Eye Guide MC.</li>
+                                            <li class="relative py-2 pl-4 before:rounded-full before:absolute before:top-5 before:left-0 before:bg-tertiary before:w-1 before:h-1 ">James Pinchbeck BA (Hons) DipM FloD Marketing partner, Streets Chartered Accountants.</li>
+                                            <li class="relative py-2 pl-4 before:rounded-full before:absolute before:top-5 before:left-0 before:bg-tertiary before:w-1 before:h-1 ">Jake Walton Welland Print.</li>
+                                            <li class="relative py-2 pl-4 before:rounded-full before:absolute before:top-5 before:left-0 before:bg-tertiary before:w-1 before:h-1 ">Rebecca Mack Ipconsult for her patience and kindness.</li>
+                                    </ul>
+
+            </div>
+
+        </div>
+        
+    </div>
+    
+</div>
+	<div class="py-16 bg-primary">
+    <div class="container">
+        <div class="flex flex-wrap">
+
+            <div class="w-full text-white md:px-8">
+                <h3 class="inline-block relative after:absolute after:bg-tertiary after:w-full after:h-[2px] after:bottom-0 after:left-0 mb-8">News</h3>
+            </div>
+
+            <div class="relative flex justify-center w-full px-4 lg:px-6">
+
+                <div class="flex w-full overflow-x-auto overflow-y-hidden scrolling-touch md:-mx-5 2xl:-mx-8 carousel-container">
+
+                                        
+                        <div class="flex-none w-full px-5 sm:w-1/2 lg:w-1/3  carousel-item">
+
+    <a href="http://eye-guide.vm/news/what-is-parkinsons-disease/" class="block p-5 text-white  ">
+        <div class="mb-4">
+            <img width="395" height="312" src="" class="object-cover object-center w-full h-full lazyload" data-src="http://eye-guide.vm/wp-content/uploads/2021/12/getimage.webp" alt="What is Parkinson&#8217;s Disease?">
+        </div>
+
+        <h4 class="inline-block relative font-sans leading-snug after:absolute after:bg-tertiary after:w-1/6 after:h-[2px] after:bottom-[-4px] after:left-0 mb-4">
+            What is Parkinson&#8217;s Disease?</h4>
+            <p>Dopamine acts as a neurotransmitter passing signal to the neurons, once these cell die, the brain cannot produce the dopamine to keep the patient's movements controlled...</p>
+
+            <button class="clear-both mt-3 btn btn--tertiary ">Read article</button>
+    </a>
+
+</div>
+                    
+                </div>
+                <div class="absolute top-0 left-0 flex items-center h-full">
+                    <button class="px-0 py-2 opacity-25 carousel-arrow carousel-arrow-left">
+                        <svg class="icon icon-angle-left text-white"><use href="http://eye-guide.vm/wp-content/themes/eye-guide-mc/_resources/images/icons-sprite.svg#icon-angle-left"></use></svg>
+                    </button>
+                </div>
+
+                <div class="absolute top-0 right-0 flex items-center h-full">
+                    <button class="px-0 py-2 carousel-arrow carousel-arrow-right">
+                        <svg class="icon icon-angle-right text-white"><use href="http://eye-guide.vm/wp-content/themes/eye-guide-mc/_resources/images/icons-sprite.svg#icon-angle-right"></use></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	<div class="py-16 bg-gray-100">
+    <div class="container">
+        <div class="flex flex-wrap">
+            
+            <div class="w-full text-center md:text-left md:w-1/4 lg:w-1/5 md:px-8">
+                <h3>Reviews</h3>
+                <a class="btn btn--tertiary" href="http://eye-guide.vm/testimonials">See all reviews</a>
+            </div>
+
+            <div class="relative flex justify-center w-full px-4 ml-auto md:w-3/4 lg:w-4/5 lg:px-6">
+
+                <ul class="flex w-full overflow-x-auto scrolling-touch md:-mx-5 2xl:-mx-8 carousel-container">
+                    
+                                            <li class="flex-none w-full px-5 sm:w-1/2 lg:w-1/2 carousel-item">
+                            <div class="p-5 text-primary ">
+                                <div class="mb-3">
+                                    <div class="font-serif text-primary">
+                                        <p>Roy found benefit from the day he put the Eye Guide MC was fitted, his pain reduced, his co-ordination improved, his tremor diminished&#8230;</p>
+
+                                    </div>
+                                </div>
+
+                                <p class="mt-3 font-sans text-sm font-semibold leading-snug text-primary">
+                                    <span>Jane, Spalding &#038; District Branch</span>
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="flex-none w-full px-5 sm:w-1/2 lg:w-1/2 carousel-item">
+                            <div class="p-5 text-primary ">
+                                <div class="mb-3">
+                                    <div class="font-serif text-primary">
+                                        <p>My walking is much improved and my pain which I had for years has gone, I feel like the hand of god touched my shoulder&#8217;</p>
+
+                                    </div>
+                                </div>
+
+                                <p class="mt-3 font-sans text-sm font-semibold leading-snug text-primary">
+                                    <span>Derrick, Lincolnshire</span>
+                                </p>
+                            </div>
+                        </li>
+                                            <li class="flex-none w-full px-5 sm:w-1/2 lg:w-1/2 carousel-item">
+                            <div class="p-5 text-primary ">
+                                <div class="mb-3">
+                                    <div class="font-serif text-primary">
+                                        <p>I know this is not cure but just getting that bit of mum back even if it’s for a little while feels amazing</p>
+
+                                    </div>
+                                </div>
+
+                                <p class="mt-3 font-sans text-sm font-semibold leading-snug text-primary">
+                                    <span>Jenny, Lincolnshire</span>
+                                </p>
+                            </div>
+                        </li>
+                                        
+                </ul>
+                <div class="absolute top-0 left-0 flex items-center h-full">
+                    <button aria-label="Next review button" class="px-0 py-2 opacity-25 carousel-arrow carousel-arrow-left">
+                        <svg class="icon icon-angle-left text-primary"><use href="http://eye-guide.vm/wp-content/themes/eye-guide-mc/_resources/images/icons-sprite.svg#icon-angle-left"></use></svg>
+                    </button>
+                </div>
+                
+                <div class="absolute top-0 right-0 flex items-center h-full">
+                    <button aria-label="Previous review button" class="px-0 py-2 carousel-arrow carousel-arrow-right">
+                        <svg class="icon icon-angle-right text-primary"><use href="http://eye-guide.vm/wp-content/themes/eye-guide-mc/_resources/images/icons-sprite.svg#icon-angle-right"></use></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="py-8 text-center text-white md:py-10 bg-tertiary">
+	<div class="max-w-lg p-4 mx-auto">		
+		<p class="h1">Get in touch</p>
+		<p>We offer free consultations so get in touch with us today and we’ll be happy to help</p>
+
+		<div class="my-8">
+			<a href="tel:01406 362 028" class="btn btn--outline-white" onClick="gtag('event' , 'click' , { 'event_category' : 'Number footer link', 'event_label' : 'Number Footer Link' });">Call us on 01406 362 028</a>
+			<span class="block p-2 md:inline-block">or</span>
+			<a href="http://eye-guide.vm/contact/" class="btn btn--white">Contact us online</a>
+		</div>
+	</div>
+</div>
+
+
+<footer class="p-4 font-semibold leading-loose text-center text-white bg-primary md:p-10 md:py-16 lg:px-0 lg:text-left">
+
+	<div class="container flex-wrap pt-12 lg:flex lg:pt-0">
+
+		<div class="relative w-full pt-8 mb-8 lg:w-3/12 after:absolute after:top-0 after:left-1/2 lg:after:left-0 lg:after:translate-x-0 after:-translate-x-1/2 after:w-[30px] after:h-[2px] after:bg-white"> 
+			<ul>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-21">
+						<a href="http://eye-guide.vm/" class="hover:text-secondary">Home</a>
+					</li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24">
+						<a href="http://eye-guide.vm/about-us/" class="hover:text-secondary">About Us</a>
+					</li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23">
+						<a href="http://eye-guide.vm/about-the-eye-guide-mc/" class="hover:text-secondary">About The Eye Guide MC</a>
+					</li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26">
+						<a href="http://eye-guide.vm/meet-the-team/" class="hover:text-secondary">Meet The Team</a>
+					</li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27">
+						<a href="http://eye-guide.vm/testimonials/" class="hover:text-secondary">Testimonials</a>
+					</li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22">
+						<a href="http://eye-guide.vm/news/" class="hover:text-secondary">News</a>
+					</li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25">
+						<a href="http://eye-guide.vm/contact/" class="hover:text-secondary">Contact</a>
+					</li>
+							</ul>
+		</div>
+
+		<div class="relative w-full pt-8 mb-8 lg:w-3/12 after:absolute after:top-0 after:left-1/2 lg:after:left-0 lg:after:translate-x-0 after:-translate-x-1/2 after:w-[30px] after:h-[2px] after:bg-white">
+			   <a rel="noopener noreferrer" aria-label="Twitter" target="_blank" class="block hover:text-secondary" href="https://www.twitter.com" onClick="gtag('event' , 'click' , { 'event_category' : 'Twitter footer link', 'event_label' : 'Twitter Footer Link' });">Twitter</a>
+
+  <a rel="noopener noreferrer" aria-label="Facebook" target="_blank" class="block hover:text-secondary" href="https://www.facebook.com/Eye-Guide-MC-101983491973931/" onClick="gtag('event' , 'click' , { 'event_category' : 'Facebook footer link', 'event_label' : 'Facebook Footer Link' });">Facebook</a>
+
+
+
+
+
+
+		</div>
+
+		<div class="relative w-full pt-8 mb-8 lg:w-3/12 after:absolute after:top-0 after:left-1/2 lg:after:left-0 lg:after:translate-x-0 after:-translate-x-1/2 after:w-[30px] after:h-[2px] after:bg-white">
+			<p>39-41 Market Place<br/>Long Sutton<br/>Spalding<br/>PE12 9JA</p>
+
+						<p class="my-8"><svg class="icon icon-clock text-secondary mr-1"><use href="http://eye-guide.vm/wp-content/themes/eye-guide-mc/_resources/images/icons-sprite.svg#icon-clock"></use></svg> Open today 8.30am - 4.30pm</p>
+
+			<a href="tel:01406 362 028" class="">
+    
+        01406 362 028
+</a>		</div>
+
+	</div>
+
+	<div class="container lg:flex lg:flex-wrap">
+
+		<div class="w-full mb-8 lg:w-3/12">
+			<a aria-label="Go to homepage" class="block lg:inline-block" href="http://eye-guide.vm">
+				<img width="417" height="100" class="mx-auto lazyload" src="" data-src="http://eye-guide.vm/wp-content/themes/eye-guide-mc/_resources/images/logo-light.png" alt="Eye Guide MC Logo" />
+			</a>
+		</div>
+
+		<div class="flex flex-col items-center w-full mb-8 lg:flex-row lg:w-9/12 lg:justify-end lg:text-sm">
+			
+			<a class="hover:text-secondary" href="http://eye-guide.vm/privacy-policy/">Privacy Policy</a>
+			
+			<span class="hidden lg:inline-block bg-secondary rounded-full w-1 h-1 mx-4 text-indent-[1000px]"></span>
+			
+			<a class="hover:text-secondary" href="http://eye-guide.vm/terms-conditions/">Terms &amp; Conditions</a>
+			
+			<span class="hidden lg:inline-block bg-secondary rounded-full w-1 h-1 mx-4 text-indent-[1000px]"></span>
+			
+			<p>&copy; Eye Guide MC 2022. All Rights Reserved. Company Registered Number: <span class="text-secondary">12200871</span></p>
+		</div>
+
+	</div>
+
+</footer>
+
+<a id="back-top" class="fixed z-50 p-2 -mb-20 text-center transition-all duration-1000 opacity-0 bg-primary-dark bottom-4 right-4 hover:opacity-50" href="javascript:">
+	<span class="text-sm text-white no-underline">
+		<svg class="icon icon-angle-up w-4 h-4"><use href="http://eye-guide.vm/wp-content/themes/eye-guide-mc/_resources/images/icons-sprite.svg#icon-angle-up"></use></svg>
+		<span class="block font-serif">Top</span>
+	</span>
+</a>
+
+<div id="pixel-to-watch"></div>
+  
+</div><!-- wrapper -->
+
+<div id="wp-notification" class="closed">
+	<div class="wp-notification-container">
+		<p>This website uses cookies to enhance your browsing experience...</p> 
+		<div>
+			<a href="http://eye-guide.vm/privacy-policy/">More information</a>
+			<span id="wp-notification-toggle">I understand</span>
+		</div>
+	</div>
+</div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><script type='text/javascript' src='http://eye-guide.vm/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' defer src='http://eye-guide.vm/wp-content/plugins/adtrak-core/assets/js/min/cookie-public-min.js' id='adtrak-cookie-js'></script>
+<script type='text/javascript' id='production-js-extra'>
+/* <![CDATA[ */
+var themeURL = {"themeURL":"http:\/\/eye-guide.vm\/wp-content\/themes\/eye-guide-mc","site_url":"http:\/\/eye-guide.vm"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='http://eye-guide.vm/wp-content/themes/eye-guide-mc/dist/production-dist.js' id='production-js'></script>
+
+</body>
+
+</html><!-- WP Fastest Cache file was created in 0.57426691055298 seconds, on 31-01-22 21:36:19 -->

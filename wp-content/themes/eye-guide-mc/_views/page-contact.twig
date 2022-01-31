@@ -36,7 +36,7 @@
 				
 					<p class="h2">Contact Details</p>
 
-					<p class="mb-4 ">{{ function('icon', 'map-marker-alt', 'text-secondary') }} <span class="font-semibold">{{site.title}},</span>
+					<p class="relative pl-6 mb-4">{{ function('icon', 'map-marker-alt', 'text-secondary absolute top-1 left-0') }} <span class="font-semibold">{{site.title}},</span>
 						{{ function('address_inline') }}</p>
 
 						{% include "_components/phone-number.twig" with {
@@ -70,4 +70,10 @@
 	posts: newsPosts
 	} only %}
 
+{% endblock %}
+
+{% block footer %}
+	{% include "_components/footer.twig" with {
+		contact : true,
+	} %}
 {% endblock %}

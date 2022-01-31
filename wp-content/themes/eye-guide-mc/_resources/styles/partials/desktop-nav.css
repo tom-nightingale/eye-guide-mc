@@ -12,14 +12,6 @@ Desktop Navs
       }
     }
 
-    a {
-      &:hover {
-        & + .sub-menu {
-          @apply block opacity-100;
-        }
-      }
-    }
-
     .icon-angle-down {
       @apply absolute bottom-0 w-4 h-4 transform -translate-x-1/2 opacity-50 left-1/2;
     }
@@ -31,17 +23,15 @@ Desktop Navs
     }
   }
 
-  .sub-menu {
-    @apply absolute z-40 hidden transform -translate-x-1/2 bg-white shadow-lg opacity-0 top-full left-1/2;
+  .menu-primary {
+    a {
+      @apply before:transition before:duration-300 before:absolute before:h-1 before:w-full before:top-0 before:left-0;
 
-    &:focus-within {
-      @apply visible block opacity-100;
-    }
-
-    width: 250px;
-
-    &:hover {
-      @apply visible block opacity-100;
+      &:hover {
+        @apply before:bg-gray-500;
+      }
     }
   }
 }
+
+

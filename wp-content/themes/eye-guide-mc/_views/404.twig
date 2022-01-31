@@ -1,21 +1,27 @@
 {% extends '_layout/base.twig' %}
 
+{% block hero %}
+{% include "_components/hero.twig" with {
+  imageLeft: post.meta('hero_image_left'),
+  imageRight: post.meta('hero_image_right'),
+  heading: post.hero_heading,
+  subheading: post.hero_subheading,
+  heroButton: post.hero_button,
+  heroButtonText: post.hero_button_text,
+  heroButtonDestination: post.hero_button_destination,
+} %}
+{% endblock %}
+
 {% block content %}
 
-<div class="container flex my-8 lg:my-16">
+{% include "_components/centered-content.twig" with {
+  heading: "Page not found",
+  content: "Page not found. Please <a href='"~ site.url ~"'>Go home</a>",
+  hasButton: false,
+  buttonText: false,
+  buttonDestination: false,
+} %}
 
-  <main class="max-w-screen-lg mx-auto lg:w-2/3">
 
-    <article class="copy">
-
-      <h1>Page not found</h1>
-
-      <p>Please go to the <a href="{{site.url}}">homepage</a>.</p>
-
-    </article>
-
-  </main>
-
-</div>
 
 {% endblock %}
