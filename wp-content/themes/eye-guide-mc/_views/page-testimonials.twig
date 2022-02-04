@@ -29,10 +29,12 @@
 					<div class="relative w-full p-4 sm:p-8 z-1 sm:w-1/2 lg:w-1/3">
 
 						{% if video.video_type == "media_library" %}
+
+							{{dump(video)}}
 						
 							<video playsinline loop controls preload="auto" class="w-full border-8 border-white" poster="{{video.meta('video_poster').sizes.medium_large}}">
 							
-								<source src="{{video.meta('video_media_file').url}}" type="video/mp4">
+								<source src="{{video.meta('video_media_file').url}}" type="video/webm">
 							
 								Sorry, your browser doesn't support embedded videos.
 							
