@@ -23,7 +23,7 @@
 
                 {% if options.video_type == "media_library" %}
 
-                    <video playsinline autoplay muted loop controls preload="auto" class="w-full mb-5 md:mb-0" poster="{{options.video_poster_image.sizes.medium_large|towebp}}">
+                    <video playsinline loop controls preload="auto" class="w-full mb-5 md:mb-0" poster="{{options.video_poster_image.sizes.medium_large|towebp}}">
 
                         <source src="{{options.video_from_library.url}}" type="video/mp4">
 
