@@ -30,7 +30,7 @@
 
 						{% if video.video_type == "media_library" %}
 						
-							<video controls preload="none" class="w-full border-8 border-white" poster="{{video.meta('video_poster').sizes.medium_large}}">
+							<video playsinline loop controls preload="auto" class="w-full border-8 border-white" poster="{{video.meta('video_poster').sizes.medium_large}}">
 							
 								<source src="{{video.meta('video_media_file').url}}" type="video/mp4">
 							
