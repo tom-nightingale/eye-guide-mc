@@ -1,0 +1,125 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+@import 'partials/core.css';
+@import 'partials/buttons.css';
+@import 'partials/cookies.css';
+@import 'partials/desktop-nav.css';
+@import 'partials/forms.css';
+@import 'partials/mobile-nav.css';
+@import 'partials/typography.css';
+
+@import "tailwindcss/utilities";
+
+/* Custom CSS Here */
+
+.carousel-container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.carousel-container::-webkit-scrollbar { /* WebKit */
+    display: none;
+}
+
+.dark-content {
+    li {
+        @apply relative py-4 pl-6 before:rounded-full before:absolute before:top-6 before:left-0 before:bg-tertiary before:w-2 before:h-2;
+    }
+
+    a {
+        @apply text-secondary;
+    }
+}
+
+.hero + .dark-bg-content {
+    @apply mt-10;
+}
+
+.video-embed iframe {
+    @apply w-full h-full;
+}
+
+.modal {
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+
+    &.active {
+        transform: translateY(0);
+    }
+}
+
+.modal-content {
+    @apply w-full transition-all duration-300;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+
+    &.active {
+        transform: translateY(0) translateX(-50%);
+    }
+}
+
+/* Mailchimp form styles */
+#mc_embed_signup {
+
+    h3 {
+        @apply mb-0;
+    }
+
+    p {
+        @apply text-sm mb-2;
+    }
+
+    .indicates-required {
+        @apply text-tertiary text-sm mb-4;
+    }
+
+    .mc-field-group {
+        @apply w-full mb-4;
+
+        label {
+            @apply mb-2 block w-full text-center text-primary;
+        }
+
+        ul {
+            @apply w-full mt-2;
+        }
+
+        li {
+            @apply flex items-center;
+
+            input,
+            label {
+                @apply w-auto m-0 font-normal;
+            }
+        }
+
+        input {
+            @apply text-center rounded-sm;
+        }
+
+        div.mce_inline_error {
+            @apply px-0 mb-0 w-full text-sm font-normal text-center bg-transparent text-tertiary;
+        }
+
+        &.input-group {
+            @apply md:w-full md:my-0 md:text-center;
+
+            ul {
+                @apply md:flex md:justify-center;
+            }
+
+            li {
+                @apply md:mr-6 md:text-sm;
+            }
+        }
+    }
+
+    .optionalParent {
+        @apply mt-4;
+    }
+
+    .brandingLogo {
+        @apply hidden;
+    }
+}

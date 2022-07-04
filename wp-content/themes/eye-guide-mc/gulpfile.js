@@ -36,7 +36,7 @@ let gulp = require("gulp"),
  **************************/
 gulp.task("styles", function () {
   return gulp
-    .src("_resources/styles/main.css")
+    .src("_resources/styles/main.scss")
     // Lets pipe the CSS through the below plugins
     // cssImport allows us to use @import inside CSS
     // nested allows for nesting in CSS
