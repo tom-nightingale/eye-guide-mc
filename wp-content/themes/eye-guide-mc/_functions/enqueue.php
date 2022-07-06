@@ -14,8 +14,12 @@
 
         if(is_home()){
           wp_enqueue_script('livesearch', get_theme_file_uri() . '/dist/production-livesearch.js','', '', true);
-          wp_enqueue_script('mailchimp', get_theme_file_uri() . '/dist/production-modal.js','', '', true);
+          
         }
+	    
+if(is_home() || is_front_page()) {
+	wp_enqueue_script('mailchimp', get_theme_file_uri() . '/dist/production-modal.js','', '', true);
+}
 
         // Localize the themeURL to our production file so we can use it to complete file paths
         wp_localize_script('production', 'themeURL', array(
