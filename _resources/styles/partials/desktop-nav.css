@@ -1,0 +1,55 @@
+/* ---------------------------------------------------
+Desktop Navs
+--------------------------------------------------- */
+
+@screen lg {
+  .menu-primary,
+  .menu-secondary {
+    li {
+      @apply relative;
+      &:focus-within > .sub-menu {
+        @apply block opacity-100;
+      }
+    }
+
+    .icon-angle-down {
+      @apply absolute w-4 h-4 transform -translate-x-1/2 opacity-50 bottom-6 left-1/2;
+    }
+
+    .current-menu-item > a,
+    .current-menu-parent > a,
+    .current_page_parent > a {
+      @apply text-red-500 bg-white before:absolute before:h-1 before:w-full before:bg-tertiary before:top-0 before:left-0;
+    }
+  }
+
+  .menu-primary {
+    a {
+      @apply before:transition before:duration-300 before:absolute before:h-1 before:w-full before:top-0 before:left-0;
+
+      &:hover {
+        @apply before:bg-gray-500;
+        &+.sub-menu {
+          @apply block opacity-100;
+        }
+      }
+    }
+  }
+
+  .sub-menu {
+    @apply absolute z-40 hidden transform -translate-x-1/2 bg-white shadow-lg opacity-0 left-1/2;
+    top: 87%;
+    width: 240px;
+
+    &:focus-within {
+      @apply visible block opacity-100;
+    }
+
+
+    &:hover {
+      @apply visible block opacity-100;
+    }
+  }
+}
+
+
