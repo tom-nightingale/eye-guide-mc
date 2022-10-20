@@ -91,7 +91,7 @@ $closeTextBg: theme("colors.red.800");
   .sub-arrow {
     @apply absolute top-0 right-0 z-10 px-0 text-center cursor-pointer;
     padding-top: 14px;
-    padding-bottom: 14px;
+    padding-bottom: 13px;
     border-left: 1px solid $linkBorder;
     width: 45px;
     color: $linkText;

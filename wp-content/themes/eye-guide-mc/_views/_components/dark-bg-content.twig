@@ -1,21 +1,22 @@
-<div class="relative before:absolute before:bottom-0 before:left-0 before:w-full {{showWCU ? 'before:h-[97%] p-4 lg:p-0 md:before:h-[92%]' : 'before:h-full'}} before:z-[-1] before:bg-primary dark-bg-content">
+<div
+    class="relative before:absolute before:bottom-0 before:left-0 before:w-full {{showWCU ? 'before:h-[97%] p-4 lg:p-0 md:before:h-[92%]' : 'before:h-full'}} before:z-[-1] before:bg-primary dark-bg-content">
 
     {% if showWCU and options.why_choose_us %}
 
-        <div class="container flex flex-wrap p-0 max-w-screen-3xl">
+    <div class="container flex flex-wrap p-0 max-w-screen-3xl">
 
-            {% for item in options.why_choose_us %}
+        {% for item in options.why_choose_us %}
 
-                <div class="w-full p-2 sm:w-1/2 md:w-1/4 lg:p-4">
-                    <div class="w-full h-full p-4 bg-white drop-shadow-2xl lg:p-8">
-                        <p class="mb-0 h4">{{item.reason_heading}}</p>
-                        <p>{{item.reason}}</p>
-                    </div>
-                </div>
-
-            {% endfor %}
-
+        <div class="w-full p-2 sm:w-1/2 md:w-1/4 lg:p-4">
+            <div class="w-full h-full p-4 bg-white drop-shadow-2xl lg:p-8">
+                <p class="mb-0 h4">{{item.reason_heading}}</p>
+                <p>{{item.reason}}</p>
+            </div>
         </div>
+
+        {% endfor %}
+
+    </div>
 
     {% endif %}
 
@@ -25,13 +26,38 @@
 
             <div class="lg:w-4/5">
 
+
+
                 <h2
                     class="inline-block relative after:absolute after:bg-tertiary after:w-full after:h-[2px] after:bottom-[-8px] after:left-0 mb-8">
                     {{heading}}</h2>
 
+
+
                 <div class="mb-8 dark-content copy">
 
                     {{content}}
+
+                    {% if faqs %}
+                    {% for faq in faqs %}
+
+                    <div class="pt-8 pb-6 border-b border-white/20">
+
+                        <a href="#" class="accordion-trigger">
+                            <span>{{faq.question}}</span>
+                            <span class="absolute top-0 right-0">{{function('icon', 'plus', 'text-secondary
+                                text-xl')}}</span>
+                        </a>
+
+                        <div class="accordion-content">
+                            {{faq.answer}}
+                        </div>
+
+                    </div>
+
+
+                    {% endfor %}
+                    {% endif %}
 
                 </div>
 
@@ -40,8 +66,8 @@
             <div class="mx-auto text-center lg:text-left lg:m-0">
 
                 {% include "_components/phone-number.twig" with {
-                    classes: 'btn btn--outline-secondary',
-                    calltag: true,
+                classes: 'btn btn--outline-secondary',
+                calltag: true,
                 } %}
 
                 <span class="block p-2 font-semibold md:inline-block">or</span>
@@ -61,7 +87,9 @@
             <div class="w-1/2 p-4 lg:w-full lg:mb-8">
 
                 <a class="block overflow-hidden" data-fslightbox href="{{image.url|towebp}}">
-                    <img width="352" height="192" class="object-cover object-center w-full transition duration-300 lazyload hover:transform hover:scale-110" src="" data-src="{{image.sizes.large}}" alt="{{site.title}}">
+                    <img width="352" height="192"
+                        class="object-cover object-center w-full transition duration-300 lazyload hover:transform hover:scale-110"
+                        src="" data-src="{{image.sizes.large}}" alt="{{site.title}}">
                 </a>
 
             </div>
@@ -75,34 +103,36 @@
     </div>
 
     {% if addMissionStatement %}
-        <div class="flex flex-wrap pb-16 mx-auto lg:mt-8 max-w-screen-3xl">
+    <div class="flex flex-wrap pb-16 mx-auto lg:mt-8 max-w-screen-3xl">
 
-            {% for item in options.mission_statement_points %}
+        {% for item in options.mission_statement_points %}
 
-                <div class="w-full p-4 sm:w-1/2">
+        <div class="w-full p-4 sm:w-1/2">
 
-                    <div class="h-full p-8 text-white bg-primary-light copy">
+            <div class="h-full p-8 text-white bg-primary-light copy">
 
-                        <h3
-                            class="relative mb-6 inline-block after:absolute after:left-0 after:bottom-[-5px] after:h-[1px] after:w-full after:bg-primary-lightest">
-                            {{item.heading}}</h3>
+                <h3
+                    class="relative mb-6 inline-block after:absolute after:left-0 after:bottom-[-5px] after:h-[1px] after:w-full after:bg-primary-lightest">
+                    {{item.heading}}</h3>
 
-                        {{item.content}}
-                    </div>
-                </div>
-
-            {% endfor %}
-
+                {{item.content}}
+            </div>
         </div>
+
+        {% endfor %}
+
+    </div>
     {% endif %}
 
     {% if addDisclaimer %}
-        <div class="container pb-8 mx-auto lg:pb-16 max-w-screen-3xl">
-            <div class="flex flex-wrap w-full p-8 font-serif text-lg text-white 2xl:text-xl 2xl:mb-16 lg:mt-16 bg-primary-light">
-                We can not guarantee that the Eye Guide MC will work for everyone. Every person with Parkinson's has a different brain and so will react differently to the Guide.
-            </div>
+    <div class="container pb-8 mx-auto lg:pb-16 max-w-screen-3xl">
+        <div
+            class="flex flex-wrap w-full p-8 font-serif text-lg text-white 2xl:text-xl 2xl:mb-16 lg:mt-16 bg-primary-light">
+            We can not guarantee that the Eye Guide MC will work for everyone. Every person with Parkinson's has a
+            different brain and so will react differently to the Guide.
         </div>
+    </div>
     {% endif %}
-    
+
 
 </div>

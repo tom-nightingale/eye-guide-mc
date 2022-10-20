@@ -45,7 +45,7 @@ h4, .h4 {
     @apply mb-6 leading-relaxed;
   }
 
-  a {
+  a:not(.accordion-trigger) {
     @apply inline-block text-tertiary;
 
     &:hover {

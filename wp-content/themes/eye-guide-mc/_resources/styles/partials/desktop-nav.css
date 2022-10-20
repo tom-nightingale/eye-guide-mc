@@ -29,6 +29,10 @@ Desktop Navs
 
       &:hover {
         @apply before:bg-gray-500;
+
+        &+.sub-menu {
+          @apply block opacity-100;
+        }
       }
     }
   }

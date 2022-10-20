@@ -14,10 +14,14 @@
 /* Custom CSS Here */
 
 .carousel-container {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
 }
-.carousel-container::-webkit-scrollbar { /* WebKit */
+
+.carousel-container::-webkit-scrollbar {
+    /* WebKit */
     display: none;
 }
 
@@ -26,12 +30,12 @@
         @apply relative py-4 pl-6 before:rounded-full before:absolute before:top-6 before:left-0 before:bg-tertiary before:w-2 before:h-2;
     }
 
-    a {
+    a:not(.accordion-trigger) {
         @apply text-secondary;
     }
 }
 
-.hero + .dark-bg-content {
+.hero+.dark-bg-content {
     @apply mt-10;
 }
 
@@ -122,4 +126,19 @@
     .brandingLogo {
         @apply hidden;
     }
+}
+
+.accordion-trigger {
+    @apply relative flex items-center justify-between w-full pr-8 mb-2 font-serif text-2xl font-bold text-white transition-all duration-300;
+    @apply hover:cursor-pointer hover:pl-4;
+
+    &.active:hover {
+        @apply pl-0;
+    }
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.75s ease;
 }

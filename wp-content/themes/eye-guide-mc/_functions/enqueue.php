@@ -11,6 +11,9 @@
           wp_enqueue_script('scripts-uniquename', get_theme_file_uri() . '/dist/production-testimonial-tabs.js','', '', true);
         }
 
+        if( is_page('faqs') ){
+          wp_enqueue_script('faqs', get_theme_file_uri() . '/dist/production-faqs.js','', '', true);
+        }
 
         if(is_home()){
           wp_enqueue_script('livesearch', get_theme_file_uri() . '/dist/production-livesearch.js','', '', true);
