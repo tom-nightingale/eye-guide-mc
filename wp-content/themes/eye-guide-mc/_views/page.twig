@@ -41,6 +41,17 @@
 
 		{% endif %}
 
+		{% if block.acf_fc_layout == "faqs" %}
+		
+			{% include "_components/dark-bg-content.twig" with {
+				showWCU: true,
+				faqs: block.faqs,
+				heading: "Frequently Asked Questions",
+				addDisclaimer: true,
+			} %}
+		
+		{% endif %}
+
 	{% endfor %}	
 
 	{% include "_components/video.twig" %}
