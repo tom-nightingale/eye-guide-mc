@@ -39,7 +39,7 @@ Desktop Navs
         .sub-menu {
           @apply absolute z-40 hidden transform -translate-x-1/2 bg-white shadow-lg opacity-0 left-1/2;
           width: 240px;
-          top: 87%;
+          top: 85%;
     
           &:focus-within {
             @apply visible block opacity-100;
