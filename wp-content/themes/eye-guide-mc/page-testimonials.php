@@ -24,4 +24,12 @@ $video_args = [
 ];
 $context['videos'] = new Timber\PostQuery($video_args);
 
+$post_args = [
+    'post_type' => 'post',
+    'posts_per_page' => 5,
+    'orderby' => 'date',
+    'order' => 'DESC',
+];
+$context['newsPosts'] = new Timber\PostQuery($post_args);
+
 Timber::render( [ 'page-'.$timber_post->slug.'.twig', 'page.twig' ], $context );
